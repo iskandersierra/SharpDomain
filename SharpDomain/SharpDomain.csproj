@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aggregates\IAggregate.cs" />
+    <Compile Include="Aggregates\IEntity.cs" />
     <Compile Include="Messaging\Envelope.cs" />
     <Compile Include="Messaging\ExtensionsToICommandBus.cs" />
     <Compile Include="Messaging\ExtensionsToIEventBus.cs" />
