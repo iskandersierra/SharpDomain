@@ -41,6 +41,12 @@
   <ItemGroup>
     <Compile Include="Aggregates\IAggregate.cs" />
     <Compile Include="Aggregates\IEntity.cs" />
+    <Compile Include="Aggregates\Aggregate.cs" />
+    <Compile Include="Aggregates\INewIdGenerator.cs" />
+    <Compile Include="ICommandsService.cs" />
+    <Compile Include="Messaging\Command.cs" />
+    <Compile Include="Messaging\IUpdateableEvent.cs" />
+    <Compile Include="Messaging\Event.cs" />
     <Compile Include="Messaging\Envelope.cs" />
     <Compile Include="Messaging\ExtensionsToICommandBus.cs" />
     <Compile Include="Messaging\ExtensionsToIEventBus.cs" />
@@ -55,6 +61,7 @@
     <Compile Include="Messaging\IEventHandlerRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,15 +40,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserAggregate\CreateUserCommand.cs" />
-    <Compile Include="UserAggregate\User.cs" />
-    <Compile Include="UserAggregate\UserFactory.cs" />
+    <Compile Include="UserDomain\Commands\CreateUser.cs" />
+    <Compile Include="UserDomain\Commands\CreateUserCommand.cs" />
+    <Compile Include="UserDomain\Events\UserCreated.cs" />
+    <Compile Include="UserDomain\Events\UserCreatedEvent.cs" />
+    <Compile Include="UserDomain\Entities\INewUserIdGenerator.cs" />
+    <Compile Include="UserDomain\Entities\User.cs" />
+    <Compile Include="UserDomain\Entities\UserAggregate.cs" />
+    <Compile Include="UserDomain\Factories\UserAggregateFactory.cs" />
+    <Compile Include="UserDomain\Factories\UserFactory.cs" />
+    <Compile Include="UserDomain\UserCommands.cs" />
+    <Compile Include="UserDomain\UserDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpDomain\SharpDomain.csproj">
       <Project>{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}</Project>
       <Name>SharpDomain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserDomain\Queries\" />
+    <Folder Include="UserDomain\Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

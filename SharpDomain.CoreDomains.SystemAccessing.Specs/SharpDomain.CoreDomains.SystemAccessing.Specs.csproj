@@ -48,31 +48,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserAggregate\Steps\UserFactorySteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserAggregate\UserFactory.feature.cs">
+    <Compile Include="UserDomain\CreateUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserFactory.feature</DependentUpon>
+      <DependentUpon>CreateUser.feature</DependentUpon>
     </Compile>
+    <Compile Include="UserDomain\Steps\CreateUserSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="UserAggregate\UserFactory.feature">
+    <None Include="UserDomain\CreateUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UserFactory.feature.cs</LastGenOutput>
+      <LastGenOutput>CreateUser.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharpDomain.CoreDomains.SystemAccessingImplementation\SharpDomain.CoreDomains.SystemAccessingImplementation.csproj">
-      <Project>{20AC8330-A0FA-4455-80B1-7D8E021C8C25}</Project>
-      <Name>SharpDomain.CoreDomains.SystemAccessingImplementation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SharpDomain.CoreDomains.SystemAccessing\SharpDomain.CoreDomains.SystemAccessing.csproj">
-      <Project>{f458133f-6479-4f57-8380-82ad430a7fe1}</Project>
-      <Name>SharpDomain.CoreDomains.SystemAccessing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SharpDomain\SharpDomain.csproj">
       <Project>{7adec00d-cf0c-4aaa-8f78-da35ab71c07f}</Project>
       <Name>SharpDomain</Name>
@@ -81,6 +73,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

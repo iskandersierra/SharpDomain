@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserAggregate\DefaultUserFactory.cs" />
-    <Compile Include="UserAggregate\EventSourcedUser.cs" />
+    <Compile Include="UserDomain\Commands\CreateUserCommand.cs" />
+    <Compile Include="UserDomain\Factories\UserAggregateFactory.cs" />
+    <Compile Include="UserDomain\Factories\UserAggregate.cs" />
+    <Compile Include="UserDomain\Events\UserCreatedEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpDomain.CoreDomains.SystemAccessing\SharpDomain.CoreDomains.SystemAccessing.csproj">

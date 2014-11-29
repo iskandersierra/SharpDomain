@@ -13,11 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Specs", "SharpD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemAccessing", "SystemAccessing", "{9E7EB2E6-2414-466E-9168-2DEE70670017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.CoreDomains.SystemAccessing", "SharpDomain.CoreDomains.SystemAccessing\SharpDomain.CoreDomains.SystemAccessing.csproj", "{F458133F-6479-4F57-8380-82AD430A7FE1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{376B2A7E-743F-41B3-BBAD-B1EB3174D76A}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.CoreDomains.SystemAccessing.Specs", "SharpDomain.CoreDomains.SystemAccessing.Specs\SharpDomain.CoreDomains.SystemAccessing.Specs.csproj", "{6A359B6D-55BC-42A1-9824-D85F46B96CEC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.CoreDomains.SystemAccessingImplementation", "SharpDomain.CoreDomains.SystemAccessingImplementation\SharpDomain.CoreDomains.SystemAccessingImplementation.csproj", "{20AC8330-A0FA-4455-80B1-7D8E021C8C25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMVCApp", "TestMVCApp\TestMVCApp.csproj", "{31BBFE66-AEED-4857-8253-E7919391655A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +35,10 @@ Global
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F458133F-6479-4F57-8380-82AD430A7FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F458133F-6479-4F57-8380-82AD430A7FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F458133F-6479-4F57-8380-82AD430A7FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F458133F-6479-4F57-8380-82AD430A7FE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A359B6D-55BC-42A1-9824-D85F46B96CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A359B6D-55BC-42A1-9824-D85F46B96CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A359B6D-55BC-42A1-9824-D85F46B96CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A359B6D-55BC-42A1-9824-D85F46B96CEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20AC8330-A0FA-4455-80B1-7D8E021C8C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20AC8330-A0FA-4455-80B1-7D8E021C8C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20AC8330-A0FA-4455-80B1-7D8E021C8C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20AC8330-A0FA-4455-80B1-7D8E021C8C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,8 +47,6 @@ Global
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{9E7EB2E6-2414-466E-9168-2DEE70670017} = {1536B962-09E1-4A98-B354-31702323C969}
-		{F458133F-6479-4F57-8380-82AD430A7FE1} = {9E7EB2E6-2414-466E-9168-2DEE70670017}
-		{6A359B6D-55BC-42A1-9824-D85F46B96CEC} = {9E7EB2E6-2414-466E-9168-2DEE70670017}
-		{20AC8330-A0FA-4455-80B1-7D8E021C8C25} = {9E7EB2E6-2414-466E-9168-2DEE70670017}
+		{31BBFE66-AEED-4857-8253-E7919391655A} = {1536B962-09E1-4A98-B354-31702323C969}
 	EndGlobalSection
 EndGlobal

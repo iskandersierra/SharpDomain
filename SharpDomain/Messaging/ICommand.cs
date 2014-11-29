@@ -8,11 +8,10 @@ namespace SharpDomain.Messaging
 {
     public interface ICommand
     {
-        object Id { get; }
     }
 
     public interface ICommand<TCommandId> : ICommand
     {
-        new TCommandId Id { get; }
+        TCommandId Id { get; }
     }
 }
