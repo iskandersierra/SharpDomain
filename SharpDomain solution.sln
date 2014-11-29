@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain", "SharpDomain\SharpDomain.csproj", "{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{1536B962-09E1-4A98-B354-31702323C969}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{1536B962-09E1-4A98-B354-31702323C969}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{F8D6671F-DAA2-4A25-B408-34E98284A5A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Specs", "SharpDomain.Specs\SharpDomain.Specs.csproj", "{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemAccessing", "SystemAccessing", "{9E7EB2E6-2414-466E-9168-2DEE70670017}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{376B2A7E-743F-41B3-BBAD-B1EB3174D76A}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,7 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{376B2A7E-7
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMVCApp", "TestMVCApp\TestMVCApp.csproj", "{31BBFE66-AEED-4857-8253-E7919391655A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{5609E552-7F02-4703-98EE-552720164617}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMVCApp", "Applications\TestMVCApp\TestMVCApp.csproj", "{31BBFE66-AEED-4857-8253-E7919391655A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain", "Framework\SharpDomain\SharpDomain.csproj", "{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Specs", "Framework\SharpDomain.Specs\SharpDomain.Specs.csproj", "{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +27,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,18 +39,13 @@ Global
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31BBFE66-AEED-4857-8253-E7919391655A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31BBFE66-AEED-4857-8253-E7919391655A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{31BBFE66-AEED-4857-8253-E7919391655A} = {5609E552-7F02-4703-98EE-552720164617}
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
-		{9E7EB2E6-2414-466E-9168-2DEE70670017} = {1536B962-09E1-4A98-B354-31702323C969}
-		{31BBFE66-AEED-4857-8253-E7919391655A} = {1536B962-09E1-4A98-B354-31702323C969}
 	EndGlobalSection
 EndGlobal
