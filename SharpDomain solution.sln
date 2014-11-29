@@ -21,6 +21,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain", "Framework\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Specs", "Framework\SharpDomain.Specs\SharpDomain.Specs.csproj", "{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreDomains", "CoreDomains", "{EE5BA10D-42AF-4129-859D-2584B88A11CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagement", "UserManagement", "{5C12DCBB-5ABE-4321-9405-8873607535AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemAccessing", "SystemAccessing", "{EEB29CBA-2E93-4CB2-AE25-2AC35C319071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{79BE3893-0351-4927-9291-03482607EAFE}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.MassTransitAdapter", "Framework\SharpDomain.MassTransitAdapter\SharpDomain.MassTransitAdapter.csproj", "{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDomains.UserManagement", "Domains\CoreDomains\UserManagement\CoreDomains.UserManagement\CoreDomains.UserManagement.csproj", "{6DE83B12-F05B-4EFE-B13C-C03F392954FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDomains.UserManagement.Implementation", "Domains\CoreDomains\UserManagement\CoreDomains.UserManagement.Implementation\CoreDomains.UserManagement.Implementation.csproj", "{155CA14A-CB68-4AB4-9999-881A90B1A674}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +58,18 @@ Global
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +78,11 @@ Global
 		{31BBFE66-AEED-4857-8253-E7919391655A} = {5609E552-7F02-4703-98EE-552720164617}
 		{7ADEC00D-CF0C-4AAA-8F78-DA35AB71C07F} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{FC3D7E88-633E-4B7E-88FC-301FA3E0C2EB} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
+		{EE5BA10D-42AF-4129-859D-2584B88A11CF} = {1536B962-09E1-4A98-B354-31702323C969}
+		{5C12DCBB-5ABE-4321-9405-8873607535AF} = {EE5BA10D-42AF-4129-859D-2584B88A11CF}
+		{EEB29CBA-2E93-4CB2-AE25-2AC35C319071} = {EE5BA10D-42AF-4129-859D-2584B88A11CF}
+		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
+		{6DE83B12-F05B-4EFE-B13C-C03F392954FE} = {5C12DCBB-5ABE-4321-9405-8873607535AF}
+		{155CA14A-CB68-4AB4-9999-881A90B1A674} = {5C12DCBB-5ABE-4321-9405-8873607535AF}
 	EndGlobalSection
 EndGlobal
