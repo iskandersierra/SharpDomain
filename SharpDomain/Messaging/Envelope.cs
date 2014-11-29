@@ -8,7 +8,6 @@ namespace SharpDomain.Messaging
         {
             return new Envelope<T>(body);
         }
-
     }
 
     public class Envelope<TBody> : Envelope
@@ -19,14 +18,6 @@ namespace SharpDomain.Messaging
         }
 
         public TBody Body { get; private set; }
-
-        public TimeSpan Delay { get; set; }
-
-        public TimeSpan TimeToLive { get; set; }
-
-        public string CorrelationId { get; set; }
-
-        public string MessageId { get; set; }
 
         public static implicit operator Envelope<TBody>(TBody body)
         {
