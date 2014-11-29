@@ -5,18 +5,23 @@
         
     }
 
-    public abstract class Command<TId> : Command, ICommand<TId>
+    public abstract class CorrelatedCommand<TId> : Command, ICorrelatedCommand<TId>
     {
-        private readonly TId _id;
+        private readonly TId _correlationId;
 
-        protected Command(TId id)
+        protected CorrelatedCommand(TId correlationId)
         {
-            _id = id;
+            _correlationId = correlationId;
         }
 
-        public TId Id
+        public TId CorrelationId
         {
-            get { return _id; }
+            get { return _correlationId; }
+        }
+
+        object ICorrelatedCommand.CorrelationId
+        {
+            get { return CorrelationId; }
         }
     }
 }

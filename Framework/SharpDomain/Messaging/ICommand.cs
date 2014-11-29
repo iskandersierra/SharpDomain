@@ -10,8 +10,13 @@ namespace SharpDomain.Messaging
     {
     }
 
-    public interface ICommand<TCommandId> : ICommand
+    public interface ICorrelatedCommand : ICommand
     {
-        TCommandId Id { get; }
+        object CorrelationId { get; }
+    }
+
+    public interface ICorrelatedCommand<TId> : ICorrelatedCommand
+    {
+        TId CorrelationId { get; }
     }
 }

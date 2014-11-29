@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace SharpDomain.Messaging
 {
@@ -28,6 +29,11 @@ namespace SharpDomain.Messaging
         {
             if (envelope == null) throw new ArgumentNullException("envelope");
             return envelope.Body;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}: {1}", typeof(TBody).FullName, JsonConvert.SerializeObject(Body, Formatting.None));
         }
     }
 }
