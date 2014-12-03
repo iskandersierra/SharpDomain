@@ -40,8 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleDomain\Commands\ActivateRole.cs" />
+    <Compile Include="RoleDomain\Commands\ChangeRoleDescription.cs" />
+    <Compile Include="RoleDomain\Commands\CreateRole.cs" />
+    <Compile Include="RoleDomain\Commands\DeactivateRole.cs" />
+    <Compile Include="RoleDomain\Events\RoleCreated.cs" />
     <Compile Include="RoleDomain\IRoleCommands.cs" />
-    <Compile Include="RoleDomain\IRoleQueries.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

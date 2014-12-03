@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Querying\IDomainQuery.cs" />
+    <Compile Include="Querying\IPagedCollection.cs" />
+    <Compile Include="Querying\PagedCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MassTransit;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
 using TestMVCApp.App_Start;
@@ -23,14 +24,21 @@ namespace TestMVCApp.App_Start
         private static Container BuildContainer()
         {
             var container = new Container();
-            var lifestyle = Lifestyle.Singleton;
+            var singleton = Lifestyle.Singleton;
 
             // Register in process command bus. Change later by a webservice oriented command bus
-
+            ConfigureBusses(container, singleton);
 
             container.Verify();
 
             return container;
         }
+
+        private static void ConfigureBusses(Container container, Lifestyle singleton)
+        {
+            
+
+        }
+
     }
 }

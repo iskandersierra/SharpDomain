@@ -1,0 +1,11 @@
+Configuration of RabbitMQ server:
+
+WebSite: https://www.rabbitmq.com/
+Purpose: Free & Robust Message Quewing System
+Version: RabbitMQ 3.4.1, Erlang 17.3
+
+How to install RabbitMQ: https://www.rabbitmq.com/install-windows.html
+
+How to enable management plugin: https://www.rabbitmq.com/management.html#configuration
+
+Management Access: http://localhost:15672/#/

@@ -38,7 +38,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.MassTransitAdap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDomains.UserManagement", "Domains\CoreDomains\UserManagement\CoreDomains.UserManagement\CoreDomains.UserManagement.csproj", "{6DE83B12-F05B-4EFE-B13C-C03F392954FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDomains.UserManagement.Implementation", "Domains\CoreDomains\UserManagement\CoreDomains.UserManagement.Implementation\CoreDomains.UserManagement.Implementation.csproj", "{155CA14A-CB68-4AB4-9999-881A90B1A674}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{66C80F86-2BDF-4888-A926-BD3FC2FF3644}"
+	ProjectSection(SolutionItems) = preProject
+		RabbitMQ.txt = RabbitMQ.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDomains.UserManagement.Querying", "Domains\CoreDomains\UserManagement\CoreDomains.UserManagement.Querying\CoreDomains.UserManagement.Querying.csproj", "{70EA5812-D113-4E5E-83CA-A25CF7438C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,10 +71,10 @@ Global
 		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE83B12-F05B-4EFE-B13C-C03F392954FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{155CA14A-CB68-4AB4-9999-881A90B1A674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EA5812-D113-4E5E-83CA-A25CF7438C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EA5812-D113-4E5E-83CA-A25CF7438C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EA5812-D113-4E5E-83CA-A25CF7438C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EA5812-D113-4E5E-83CA-A25CF7438C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +88,7 @@ Global
 		{EEB29CBA-2E93-4CB2-AE25-2AC35C319071} = {EE5BA10D-42AF-4129-859D-2584B88A11CF}
 		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{6DE83B12-F05B-4EFE-B13C-C03F392954FE} = {5C12DCBB-5ABE-4321-9405-8873607535AF}
-		{155CA14A-CB68-4AB4-9999-881A90B1A674} = {5C12DCBB-5ABE-4321-9405-8873607535AF}
+		{66C80F86-2BDF-4888-A926-BD3FC2FF3644} = {376B2A7E-743F-41B3-BBAD-B1EB3174D76A}
+		{70EA5812-D113-4E5E-83CA-A25CF7438C97} = {5C12DCBB-5ABE-4321-9405-8873607535AF}
 	EndGlobalSection
 EndGlobal
