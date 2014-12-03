@@ -1,7 +1,7 @@
 Configuration of RabbitMQ server:
 
 WebSite: https://www.rabbitmq.com/
-Purpose: Free & Robust Message Quewing System
+Purpose: Free & Robust Message Queueing System
 Version: RabbitMQ 3.4.1, Erlang 17.3
 
 How to install RabbitMQ: https://www.rabbitmq.com/install-windows.html
