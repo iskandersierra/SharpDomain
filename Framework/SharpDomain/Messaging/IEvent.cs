@@ -1,14 +1,11 @@
-﻿namespace SharpDomain.Messaging
+﻿using System;
+
+namespace SharpDomain.Messaging
 {
     public interface IEvent
     {
-        object SourceId { get; }
+        Guid SourceId { get; }
 
-        long Version { get; }
-    }
-
-    public interface IEvent<TSourceId> : IEvent
-    {
-        new TSourceId SourceId { get; }
+        int Version { get; }
     }
 }

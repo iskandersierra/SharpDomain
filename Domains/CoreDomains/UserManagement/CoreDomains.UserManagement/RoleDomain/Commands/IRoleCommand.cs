@@ -3,7 +3,8 @@ using SharpDomain.Messaging;
 
 namespace CoreDomains.UserManagement.RoleDomain.Commands
 {
-    public interface ActivateRole : IRoleCommand
+    public interface IRoleCommand : ICommand
     {
+        Guid RoleId { get; }
     }
 }

@@ -1,9 +1,7 @@
 ﻿namespace CoreDomains.UserManagement.RoleDomain.Events
 {
-    public interface RoleCreated : IRoleEvent
+    public interface RoleDescriptionChanged : IRoleEvent
     {
-        string Name { get; }
-
         string Description { get; }
     }
 }

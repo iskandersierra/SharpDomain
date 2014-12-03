@@ -44,8 +44,19 @@
     <Compile Include="RoleDomain\Commands\ChangeRoleDescription.cs" />
     <Compile Include="RoleDomain\Commands\CreateRole.cs" />
     <Compile Include="RoleDomain\Commands\DeactivateRole.cs" />
+    <Compile Include="RoleDomain\Commands\IRoleCommand.cs" />
+    <Compile Include="RoleDomain\Events\IRoleEvent.cs" />
+    <Compile Include="RoleDomain\Events\RoleActivated.cs" />
     <Compile Include="RoleDomain\Events\RoleCreated.cs" />
+    <Compile Include="RoleDomain\Events\RoleDeactivated.cs" />
+    <Compile Include="RoleDomain\Events\RoleDescriptionChanged.cs" />
     <Compile Include="RoleDomain\IRoleCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Framework\SharpDomain\SharpDomain.csproj">
+      <Project>{7adec00d-cf0c-4aaa-8f78-da35ab71c07f}</Project>
+      <Name>SharpDomain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

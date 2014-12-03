@@ -2,8 +2,7 @@
 
 namespace CoreDomains.UserManagement.RoleDomain.Commands
 {
-    public interface DeactivateRole
+    public interface DeactivateRole : IRoleCommand
     {
-        Guid RoleId { get; }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace SharpDomain.Messaging
+﻿using System;
+
+namespace SharpDomain.Messaging
 {
     public interface IUpdateableEvent : IEvent
     {
-        void UpdateEvent(object sourceId, long version);
+        void UpdateEvent(Guid sourceId, int version);
     }
 }

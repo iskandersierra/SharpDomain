@@ -1,32 +1,35 @@
-﻿namespace SharpDomain.Messaging
+﻿using System;
+
+namespace SharpDomain.Messaging
 {
-    public abstract class Event<TId> : IEvent<TId>, IUpdateableEvent
+    public abstract class Event : IEvent, IUpdateableEvent
     {
-        private TId _sourceId;
-        private long _version;
+        private Guid _sourceId;
+        private int _version;
 
         protected Event()
         {
         }
 
-        public TId SourceId
+        protected Event(Guid sourceId, int version)
+        {
+            _sourceId = sourceId;
+            _version = version;
+        }
+
+        public Guid SourceId
         {
             get { return _sourceId; }
         }
 
-        public long Version
+        public int Version
         {
             get { return _version; }
         }
 
-        object IEvent.SourceId
+        void IUpdateableEvent.UpdateEvent(Guid sourceId, int version)
         {
-            get { return SourceId; }
-        }
-
-        void IUpdateableEvent.UpdateEvent(object sourceId, long version)
-        {
-            _sourceId = (TId) sourceId;
+            _sourceId = sourceId;
             _version = version;
         }
     }

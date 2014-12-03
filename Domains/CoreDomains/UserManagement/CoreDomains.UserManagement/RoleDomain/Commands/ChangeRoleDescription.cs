@@ -1,11 +1,10 @@
 ﻿using System;
+using SharpDomain.Messaging;
 
 namespace CoreDomains.UserManagement.RoleDomain.Commands
 {
-    public interface ChangeRoleDescription
+    public interface ChangeRoleDescription : IRoleCommand
     {
-        Guid RoleId { get; }
-
         string Name { get; }
 
         string Description { get; }

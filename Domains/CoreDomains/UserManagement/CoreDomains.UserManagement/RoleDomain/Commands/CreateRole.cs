@@ -2,10 +2,8 @@
 
 namespace CoreDomains.UserManagement.RoleDomain.Commands
 {
-    public interface CreateRole
+    public interface CreateRole : IRoleCommand
     {
-        Guid RoleId { get; }
-
         string Name { get; }
 
         string Description { get; }
