@@ -43,8 +43,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessControl\AccessType.cs" />
+    <Compile Include="AccessControl\IAccessControlRequest.cs" />
+    <Compile Include="AccessControl\IAccessControlResponse.cs" />
     <Compile Include="Business\IAggregate.cs" />
     <Compile Include="Business\IAggregateEventApplier.cs" />
+    <Compile Include="Business\IAggregateRepository.cs" />
     <Compile Include="Business\IConfigurableEventApplier.cs" />
     <Compile Include="Business\IEventApplier.cs" />
     <Compile Include="Business\IGenerateMemento.cs" />
@@ -52,6 +56,7 @@
     <Compile Include="Business\INewGuidGenerator.cs" />
     <Compile Include="Business\INewIdGenerator.cs" />
     <Compile Include="Business\ISaga.cs" />
+    <Compile Include="Business\ISagaRepository.cs" />
     <Compile Include="Business\NewCombGuidGenerator.cs" />
     <Compile Include="Business\NewGuidGenerator.cs" />
     <Compile Include="Business\NewIdGeneratorBase.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="Querying\IDomainQuery.cs" />
     <Compile Include="Querying\IPagedCollection.cs" />
     <Compile Include="Querying\PagedCollection.cs" />
+    <Compile Include="AccessControl\IAccessControlService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
