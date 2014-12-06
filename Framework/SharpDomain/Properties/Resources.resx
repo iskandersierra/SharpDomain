@@ -123,4 +123,10 @@
   <data name="TooManyEndpointsForCommand" xml:space="preserve">
     <value>Too many endpoints for command: {0} / {1}</value>
   </data>
+  <data name="CannotApplyEmptyIdCreationId" xml:space="preserve">
+    <value>Cannot apply creation event {0} to {1} with empty identifier</value>
+  </data>
+  <data name="CannotApplyEventToNewAggregate" xml:space="preserve">
+    <value>Cannot apply event {0} to a non-initialized {1}</value>
+  </data>
 </root>

@@ -61,6 +61,24 @@ namespace SharpDomain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot apply creation event {0} to {1} with empty identifier.
+        /// </summary>
+        public static string CannotApplyEmptyIdCreationId {
+            get {
+                return ResourceManager.GetString("CannotApplyEmptyIdCreationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot apply event {0} to a non-initialized {1}.
+        /// </summary>
+        public static string CannotApplyEventToNewAggregate {
+            get {
+                return ResourceManager.GetString("CannotApplyEventToNewAggregate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Command was not received by any subscriber: {0}.
         /// </summary>
         public static string CommandWasNotReceivedByAnySubscriber {

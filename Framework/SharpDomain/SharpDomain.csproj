@@ -46,9 +46,14 @@
     <Compile Include="AccessControl\AccessType.cs" />
     <Compile Include="AccessControl\IAccessControlRequest.cs" />
     <Compile Include="AccessControl\IAccessControlResponse.cs" />
+    <Compile Include="Business\Aggregate.cs" />
+    <Compile Include="Business\ITypedAggregateFactory.cs" />
+    <Compile Include="Business\ReflectionAggregateFactory.cs" />
     <Compile Include="Business\IAggregate.cs" />
     <Compile Include="Business\IAggregateEventApplier.cs" />
+    <Compile Include="Business\IAggregateFactory.cs" />
     <Compile Include="Business\IAggregateRepository.cs" />
+    <Compile Include="Business\IAggregator.cs" />
     <Compile Include="Business\IConfigurableEventApplier.cs" />
     <Compile Include="Business\IEventApplier.cs" />
     <Compile Include="Business\IGenerateMemento.cs" />
@@ -60,8 +65,11 @@
     <Compile Include="Business\NewCombGuidGenerator.cs" />
     <Compile Include="Business\NewGuidGenerator.cs" />
     <Compile Include="Business\NewIdGeneratorBase.cs" />
+    <Compile Include="Business\StatefulAggregate.cs" />
     <Compile Include="ICommandsService.cs" />
     <Compile Include="Messaging\Command.cs" />
+    <Compile Include="Messaging\IAggregateCreatedEvent.cs" />
+    <Compile Include="Messaging\IMessageBus.cs" />
     <Compile Include="Messaging\IUpdateableEvent.cs" />
     <Compile Include="Messaging\Event.cs" />
     <Compile Include="Messaging\Envelope.cs" />
@@ -94,7 +102,11 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IoC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

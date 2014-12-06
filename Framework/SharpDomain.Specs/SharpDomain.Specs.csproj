@@ -50,6 +50,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Aggregate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Aggregate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Business\AggregateFactory.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AggregateFactory.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Steps\AggregateSteps.cs" />
     <Compile Include="Messaging\Envelope.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +80,7 @@
     <Compile Include="Messaging\Steps\ExtensionsToICommandBusSteps.cs" />
     <Compile Include="Messaging\Steps\ExtensionsToIEventBusSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommonSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpDomain\SharpDomain.csproj">
@@ -78,6 +90,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Business\Aggregate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Aggregate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Business\AggregateFactory.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AggregateFactory.feature.cs</LastGenOutput>
+    </None>
     <None Include="Messaging\Envelope.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Envelope.feature.cs</LastGenOutput>

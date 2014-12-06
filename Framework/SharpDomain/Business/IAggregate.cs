@@ -17,10 +17,15 @@ namespace SharpDomain.Business
 
         int Version { get; }
 
-        void ApplyEvent(object @event);
+        void ApplyEvent(IEvent @event);
 
-        IEnumerable UncommittedEvents { get; }
+        IEnumerable<IEvent> UncommittedEvents { get; }
 
         //void ClearUncommittedEvents();
+    }
+
+    public interface IAggregateWithCommittedEvents : IAggregate
+    {
+        IEnumerable<IEvent> CommittedEvents { get; }
     }
 }

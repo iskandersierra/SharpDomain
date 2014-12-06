@@ -11,7 +11,7 @@ namespace SharpDomain.Messaging
         {
         }
 
-        protected Event(Guid sourceId, int version)
+        internal Event(Guid sourceId, int version)
         {
             _sourceId = sourceId;
             _version = version;
@@ -29,8 +29,25 @@ namespace SharpDomain.Messaging
 
         void IUpdateableEvent.UpdateEvent(Guid sourceId, int version)
         {
+            UpdateEvent(sourceId, version);
+        }
+
+        protected virtual void UpdateEvent(Guid sourceId, int version)
+        {
             _sourceId = sourceId;
             _version = version;
+        }
+    }
+
+    public abstract class AggregateCreatedEvent : Event, IAggregateCreatedEvent
+    {
+        protected AggregateCreatedEvent(Guid sourceId) : base(sourceId, 0)
+        {
+        }
+
+        protected override void UpdateEvent(Guid sourceId, int version)
+        {
+            base.UpdateEvent(sourceId, version);
         }
     }
 }
