@@ -88,6 +88,24 @@ namespace SharpDomain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event {0} do not implement any interface.
+        /// </summary>
+        public static string EventDoNotImplementAnyInterface {
+            get {
+                return ResourceManager.GetString("EventDoNotImplementAnyInterface", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event {0} implement interfaces {1} and {2} which neither are a new version of the other.
+        /// </summary>
+        public static string EventImplementNonVersionedInterfaces {
+            get {
+                return ResourceManager.GetString("EventImplementNonVersionedInterfaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Too many endpoints for command: {0} / {1}.
         /// </summary>
         public static string TooManyEndpointsForCommand {

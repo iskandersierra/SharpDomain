@@ -129,4 +129,10 @@
   <data name="CannotApplyEventToNewAggregate" xml:space="preserve">
     <value>Cannot apply event {0} to a non-initialized {1}</value>
   </data>
+  <data name="EventDoNotImplementAnyInterface" xml:space="preserve">
+    <value>Event {0} do not implement any interface</value>
+  </data>
+  <data name="EventImplementNonVersionedInterfaces" xml:space="preserve">
+    <value>Event {0} implement interfaces {1} and {2} which neither are a new version of the other</value>
+  </data>
 </root>
