@@ -41,7 +41,6 @@ namespace ProjectManagement.CommandHandlers
                 project.ApplyEvent(new ProjectCreatedEvent(command.ProjectId)
                 {
                     Name = command.Name,
-                    Password = command.AdministratorPassword,
                 });
                 project.ApplyEvent(new ProjectDescriptionUpdatedEvent
                 {
@@ -49,11 +48,6 @@ namespace ProjectManagement.CommandHandlers
                     Title = command.Title,
                     Description = command.Description
                 });
-                if (command.Activate)
-                    project.ApplyEvent(new ProjectActivatedEvent
-                    {
-                        SourceId = command.ProjectId
-                    });
 
                 var commitId = _guidGenerator.NewId();
                 repository.Save(project, commitId);

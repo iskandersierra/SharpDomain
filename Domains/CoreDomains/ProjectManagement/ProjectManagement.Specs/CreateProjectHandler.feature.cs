@@ -72,31 +72,27 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Project creation command with correct data must generate a new project and emmit " +
             "corresponding events")]
-        [NUnit.Framework.TestCaseAttribute("project1", "Project #1", "Proj. Desc. #1", "adminpwd1", "false", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B1}", null)]
-        [NUnit.Framework.TestCaseAttribute("project2", "Project #2", "Proj. Desc. #2", "adminpwd2", "true", "3", "3", "{A6091689-2853-45CA-84E7-CFDD56B824E1}", null)]
-        public virtual void ProjectCreationCommandWithCorrectDataMustGenerateANewProjectAndEmmitCorrespondingEvents(string name, string title, string description, string password, string activate, string events, string newVersion, string projectId, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("project1", "Project #1", "Proj. Desc. #1", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B1}", null)]
+        public virtual void ProjectCreationCommandWithCorrectDataMustGenerateANewProjectAndEmmitCorrespondingEvents(string name, string title, string description, string events, string newVersion, string projectId, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Project creation command with correct data must generate a new project and emmit " +
                     "corresponding events", exampleTags);
-#line 18
+#line 6
 this.ScenarioSetup(scenarioInfo);
-#line 19
+#line 7
  testRunner.Given("a new create project command handler instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.And(string.Format("a new create project command with \"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\" and \"{5}\"", projectId, name, title, description, password, activate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 8
+ testRunner.And(string.Format("a new create project command with \"{0}\", \"{1}\", \"{2}\" and \"{3}\"", projectId, name, title, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
  testRunner.When("the command is handled by the create project command handler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 10
  testRunner.Then(string.Format("a new project aggregate instance is saved with {0} uncommitted events and new ver" +
                         "sion {1}", events, newVersion), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
- testRunner.And(string.Format("the event number 1 is a project created event with \"{0}\", \"{1}\" and \"{2}\"", projectId, name, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
+#line 11
+ testRunner.And(string.Format("the event number 1 is a project created event with \"{0}\" and \"{1}\"", projectId, name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
  testRunner.And(string.Format("the event number 2 is a project description updated event with \"{0}\", \"{1}\" and \"" +
                         "{2}\"", projectId, title, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
- testRunner.And(string.Format("the event number 3 is a project activated event with \"{0}\" if \"{1}\" was requested" +
-                        "", projectId, activate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

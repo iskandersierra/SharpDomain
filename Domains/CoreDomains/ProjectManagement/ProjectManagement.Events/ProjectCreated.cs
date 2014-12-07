@@ -6,7 +6,6 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Events
     public interface ProjectCreated : IAggregateCreatedEvent
     {
         string Name { get; }
-        string Password { get; }
     }
 
     public class ProjectCreatedEvent : AggregateCreatedEvent, ProjectCreated
@@ -16,6 +15,5 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Events
         }
 
         public string Name { get; set; }
-        public string Password { get; set; }
     }
 }

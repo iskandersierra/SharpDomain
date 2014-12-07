@@ -27,8 +27,8 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
             ScenarioContext.Current.Set<CreateProjectHandler>(handler);
         }
 
-        [Given(@"a new create project command with ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" and ""(.*)""")]
-        public void GivenANewCreateProjectCommandWithAnd(Guid projectId, string name, string title, string description, string password, bool asActive)
+        [Given(@"a new create project command with ""(.*)"", ""(.*)"", ""(.*)"" and ""(.*)""")]
+        public void GivenANewCreateProjectCommandWithAnd(Guid projectId, string name, string title, string description)
         {
             var command = new CreateProjectCommand()
             {
@@ -36,8 +36,6 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
                 Name = name,
                 Title = title,
                 Description = description,
-                AdministratorPassword = password,
-                Activate = asActive,
             };
             ScenarioContext.Current.Set<CreateProject>(command);
         }
@@ -60,14 +58,13 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
             Assert.That(aggregate.Version, Is.EqualTo(newVersion));
         }
 
-        [Then(@"the event number (.*) is a project created event with ""(.*)"", ""(.*)"" and ""(.*)""")]
-        public void ThenTheEventNumberIsAProjectCreatedEventWithAnd(int eventNumber, Guid projectId, string name, string password)
+        [Then(@"the event number (.*) is a project created event with ""(.*)"" and ""(.*)""")]
+        public void ThenTheEventNumberIsAProjectCreatedEventWithAnd(int eventNumber, Guid projectId, string name)
         {
             var @event = CommonSteps.GetCommittedEvent<ProjectCreated>(eventNumber);
 
             Assert.That(@event.SourceId, Is.EqualTo(projectId));
             Assert.That(@event.Name, Is.EqualTo(name));
-            Assert.That(@event.Password, Is.EqualTo(password));
         }
 
         [Then(@"the event number (.*) is a project description updated event with ""(.*)"", ""(.*)"" and ""(.*)""")]
