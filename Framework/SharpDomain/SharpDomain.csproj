@@ -47,6 +47,7 @@
     <Compile Include="AccessControl\IAccessControlRequest.cs" />
     <Compile Include="AccessControl\IAccessControlResponse.cs" />
     <Compile Include="Business\Aggregate.cs" />
+    <Compile Include="Business\IAggregateRepositoryFactory.cs" />
     <Compile Include="Business\ITypedAggregateFactory.cs" />
     <Compile Include="Business\ReflectionAggregateFactory.cs" />
     <Compile Include="Business\IAggregate.cs" />

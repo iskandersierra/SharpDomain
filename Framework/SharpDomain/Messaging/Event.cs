@@ -20,11 +20,13 @@ namespace SharpDomain.Messaging
         public Guid SourceId
         {
             get { return _sourceId; }
+            set { _sourceId = value; }
         }
 
         public int Version
         {
             get { return _version; }
+            set { _version = value; }
         }
 
         void IUpdateableEvent.UpdateEvent(Guid sourceId, int version)

@@ -9,36 +9,20 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Commands
     public interface CreateProject : ICommand
     {
         Guid ProjectId { get; }
-
         string Name { get; }
-
         string Title { get; }
-
         string Description { get; }
-
         string AdministratorPassword { get; }
-
         bool Activate { get; }
     }
 
-    public interface ActivateProject : ICommand
+    public class CreateProjectCommand : CreateProject
     {
-        Guid ProjectId { get; }
+        public Guid ProjectId { get; set; }
+        public string Name { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string AdministratorPassword { get; set; }
+        public bool Activate { get; set; }
     }
-
-    public interface DeactivateProject : ICommand
-    {
-        Guid ProjectId { get; }
-    }
-
-    public interface UpdateProjectDescription : ICommand
-    {
-        Guid ProjectId { get; }
-
-        string Title { get; }
-
-        string Description { get; }
-    }
-
-    
 }

@@ -5,8 +5,8 @@
     }
 
     public interface ICommandHandler<TCommand> : ICommandHandler
-        where TCommand : ICommand
+        where TCommand : class, ICommand
     {
-        void HandleCommand(TCommand @Command);
+        void HandleCommand(TCommand command);
     }
 }
