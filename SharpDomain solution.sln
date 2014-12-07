@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{66C80F
 		RabbitMQ.txt = RabbitMQ.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectManagement", "ProjectManagement", "{A033C5CD-F71E-4F5B-85A7-0E61030A67E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Commands", "Domains\CoreDomains\ProjectManagement\ProjectManagement.Commands\ProjectManagement.Commands.csproj", "{556E60A0-5C61-4FA6-9E83-BF2654345B9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556E60A0-5C61-4FA6-9E83-BF2654345B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556E60A0-5C61-4FA6-9E83-BF2654345B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556E60A0-5C61-4FA6-9E83-BF2654345B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556E60A0-5C61-4FA6-9E83-BF2654345B9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,7 @@ Global
 		{EE5BA10D-42AF-4129-859D-2584B88A11CF} = {1536B962-09E1-4A98-B354-31702323C969}
 		{0C5C4C72-D547-4D9E-8A8A-CF6A91619B55} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 		{66C80F86-2BDF-4888-A926-BD3FC2FF3644} = {376B2A7E-743F-41B3-BBAD-B1EB3174D76A}
+		{A033C5CD-F71E-4F5B-85A7-0E61030A67E1} = {EE5BA10D-42AF-4129-859D-2584B88A11CF}
+		{556E60A0-5C61-4FA6-9E83-BF2654345B9B} = {A033C5CD-F71E-4F5B-85A7-0E61030A67E1}
 	EndGlobalSection
 EndGlobal

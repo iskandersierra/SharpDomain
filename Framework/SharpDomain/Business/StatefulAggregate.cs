@@ -40,7 +40,8 @@ namespace SharpDomain.Business
 
         #region [ Reflection cache registration ]
 
-        private static readonly ConcurrentDictionary<Type, StatefulApplyMethods> ApplyMethodsCache = new ConcurrentDictionary<Type,StatefulApplyMethods>();
+        private static readonly ConcurrentDictionary<Type, StatefulApplyMethods> ApplyMethodsCache = new ConcurrentDictionary<Type, StatefulApplyMethods>();
+        private static readonly ConcurrentDictionary<Type, EventTypeApplyInformation> EventTypeApplyInfoCache = new ConcurrentDictionary<Type, EventTypeApplyInformation>();
 
         private static StatefulApplyMethods GetApplyMethods(Type type)
         {
@@ -102,27 +103,8 @@ namespace SharpDomain.Business
 
             public void ApplyEvent(StatefulAggregate instance, IEvent @event)
             {
-                Type eventType = @event.GetType();
-                var interfaces = eventType.GetInterfaces()
-                    .Where(e => e.Assembly != EventType.Assembly)
-                    .ToList();
-
-                if (interfaces.Count == 0)
-                    throw new ArgumentException(string.Format(Resources.EventDoNotImplementAnyInterface, eventType.FullName), "event");
-
-                if (interfaces.Count > 1)
-                {
-                    // Sort interfaces so that those closer to the event class are considered first
-                    // F. ex.: A <- B <- C <- Event should give list [C, B, A]
-                    interfaces.Sort((a, b) =>
-                    {
-                        if (a.IsAssignableFrom(b))
-                            return 1; // then a > b so b goes first
-                        if (b.IsAssignableFrom(a))
-                            return -1; // then a < b so a goes first
-                        throw new ArgumentException(string.Format(Resources.EventImplementNonVersionedInterfaces, eventType.FullName, a.FullName, b.FullName), "event");
-                    });
-                }
+                var eventType = @event.GetType();
+                var interfaces = GetInterfaces(eventType);
 
                 foreach (var @interface in interfaces)
                 {
@@ -133,6 +115,87 @@ namespace SharpDomain.Business
                         return;
                     }
                 }
+            }
+
+            private static Type[] GetInterfaces(Type eventType)
+            {
+                var result = EventTypeApplyInfoCache.GetOrAdd(eventType, CreateInterfaces);
+                return result.Interfaces;
+            }
+
+            private static EventTypeApplyInformation CreateInterfaces(Type eventType)
+            {
+                var interfaces = eventType.GetInterfaces()
+                    .Where(e => e.Assembly != EventType.Assembly)
+                    .ToList();
+
+                if (interfaces.Count == 0)
+                {
+                    return new EventTypeApplyInformation(
+                        () =>
+                        {
+                            throw new ArgumentException(string.Format(Resources.EventDoNotImplementAnyInterface, eventType.FullName), "event");
+                        });
+                }
+
+                if (interfaces.Count > 1)
+                {
+                    Action throwAction = null;
+
+                    // Sort interfaces so that those closer to the event class are considered first
+                    // F. ex.: A <- B <- C <- Event should give list [C, B, A]
+                    interfaces.Sort((a, b) =>
+                    {
+                        if (a.IsAssignableFrom(b))
+                            return 1; // then a > b so b goes first
+                        if (b.IsAssignableFrom(a))
+                            return -1; // then a < b so a goes first
+                        if (throwAction == null)
+                        {
+                            throwAction = () =>
+                            {
+                                throw new ArgumentException(string.Format(Resources.EventImplementNonVersionedInterfaces, eventType.FullName, a.FullName, b.FullName), "event");
+                            };
+                        }
+                        return 0;
+                    });
+
+                    if (throwAction != null)
+                        return new EventTypeApplyInformation(throwAction);
+                }
+
+                return new EventTypeApplyInformation(interfaces.ToArray());
+            }
+        }
+
+        internal class EventTypeApplyInformation
+        {
+            private readonly Type[] _interfaces;
+            private readonly Action _throwException;
+
+            public EventTypeApplyInformation(Type[] interfaces)
+            {
+                _interfaces = interfaces;
+            }
+
+            public EventTypeApplyInformation(Action throwException)
+            {
+                _throwException = throwException;
+            }
+
+            public Type[] Interfaces
+            {
+                get
+                {
+                    if (ThrowException != null)
+                        ThrowException();
+                    return _interfaces;
+                }
+            }
+
+            public Action ThrowException
+            {
+                get { return _throwException; }
             }
         }
 
