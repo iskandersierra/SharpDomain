@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
- testRunner.And("the version of event \"e1\" is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
@@ -94,7 +94,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("the aggregate version is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the aggregate version is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
  testRunner.And("the aggregate has 1 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
@@ -186,9 +186,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 42
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
- testRunner.And("the version of event \"e1\" is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And("the version of event \"e2\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e2\" is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
  testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
@@ -198,7 +198,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 48
  testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("the aggregate version is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the aggregate version is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
  testRunner.And("the aggregate has 2 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
@@ -236,13 +236,13 @@ this.ScenarioSetup(scenarioInfo);
 #line 61
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
- testRunner.And("the version of event \"e1\" is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.And("the version of event \"e2\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e2\" is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("the version of event \"e3\" is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e3\" is 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.And("the version of event \"e4\" is 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the version of event \"e4\" is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
  testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
@@ -256,7 +256,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 71
  testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
- testRunner.And("the aggregate version is 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the aggregate version is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
  testRunner.And("the aggregate has 4 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74

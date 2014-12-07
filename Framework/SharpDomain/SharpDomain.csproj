@@ -67,6 +67,7 @@
     <Compile Include="Business\NewIdGeneratorBase.cs" />
     <Compile Include="Business\StatefulAggregate.cs" />
     <Compile Include="ICommandsService.cs" />
+    <Compile Include="Messaging\AggregateCreatedEvent.cs" />
     <Compile Include="Messaging\Command.cs" />
     <Compile Include="Messaging\IAggregateCreatedEvent.cs" />
     <Compile Include="Messaging\IMessageBus.cs" />

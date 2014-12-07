@@ -9,7 +9,7 @@ namespace SharpDomain.Business
     public class Aggregate : IAggregate
     {
         private Guid _id = Guid.Empty;
-        private int _version = -1;
+        private int _version = 0;
         private Collection<IEvent> _uncommittedEvents;
 
         protected Aggregate()
@@ -37,7 +37,7 @@ namespace SharpDomain.Business
                     throw new ArgumentOutOfRangeException("event", @event.SourceId, string.Format(Resources.CannotApplyEmptyIdCreationId, @event.GetType().FullName, this.GetType().FullName));
 
                 _id = @event.SourceId;
-                _version = 0;
+                _version = 1;
             }
             else
             {

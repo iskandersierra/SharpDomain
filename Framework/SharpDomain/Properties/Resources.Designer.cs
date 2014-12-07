@@ -88,6 +88,15 @@ namespace SharpDomain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creation event version must be always 1.
+        /// </summary>
+        public static string CreationEventVersionMustBeOne {
+            get {
+                return ResourceManager.GetString("CreationEventVersionMustBeOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event {0} do not implement any interface.
         /// </summary>
         public static string EventDoNotImplementAnyInterface {

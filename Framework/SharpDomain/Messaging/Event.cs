@@ -38,16 +38,4 @@ namespace SharpDomain.Messaging
             _version = version;
         }
     }
-
-    public abstract class AggregateCreatedEvent : Event, IAggregateCreatedEvent
-    {
-        protected AggregateCreatedEvent(Guid sourceId) : base(sourceId, 0)
-        {
-        }
-
-        protected override void UpdateEvent(Guid sourceId, int version)
-        {
-            base.UpdateEvent(sourceId, version);
-        }
-    }
 }

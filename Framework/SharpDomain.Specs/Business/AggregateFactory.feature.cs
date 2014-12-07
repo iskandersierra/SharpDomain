@@ -35,7 +35,7 @@ namespace SharpDomain.Specs.Business
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ReflectionAggregateFactory", "Reflection aggregate factory allow the creation of new clean aggregate instances " +
-                    "with default \nvalues on its properties", ProgrammingLanguage.CSharp, new string[] {
+                    "with default \r\nvalues on its properties", ProgrammingLanguage.CSharp, new string[] {
                         "infrastructure",
                         "business"});
             testRunner.OnFeatureStart(featureInfo);
@@ -87,7 +87,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.And("the aggregate id is an empty Guid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("the aggregate version is -1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the aggregate version is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
  testRunner.And("the aggregate has no uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

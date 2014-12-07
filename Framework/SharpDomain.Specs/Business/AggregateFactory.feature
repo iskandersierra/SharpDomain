@@ -10,5 +10,5 @@ Scenario: A reflection-based aggregate factory returns a new clean aggregate ins
 	Then the aggregate is not null
 	And the aggregate type is Aggregate class
 	And the aggregate id is an empty Guid
-	And the aggregate version is -1
+	And the aggregate version is 0
 	And the aggregate has no uncommitted events

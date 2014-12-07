@@ -135,4 +135,7 @@
   <data name="EventImplementNonVersionedInterfaces" xml:space="preserve">
     <value>Event {0} implement interfaces {1} and {2} which neither are a new version of the other</value>
   </data>
+  <data name="CreationEventVersionMustBeOne" xml:space="preserve">
+    <value>Creation event version must be always 1</value>
+  </data>
 </root>
