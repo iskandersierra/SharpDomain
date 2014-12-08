@@ -34,8 +34,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivateProjectHandler.cs" />
     <Compile Include="CreateProjectHandler.cs" />
+    <Compile Include="DeactivateProjectHandler.cs" />
+    <Compile Include="ProjectActivationAggregate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateProjectDescriptionHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Framework\SharpDomain\SharpDomain.csproj">

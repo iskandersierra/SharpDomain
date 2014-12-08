@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using NUnit.Framework;
-using ProjectManagement.CommandHandlers;
 using SharpDomain.Aggregates;
 using SharpDomain.Business;
+using SharpDomain.CoreDomains.ProjectManagement.CommandHandlers;
 using SharpDomain.CoreDomains.ProjectManagement.Commands;
 using SharpDomain.CoreDomains.ProjectManagement.Events;
+using SharpDomain.Messaging;
 using TechTalk.SpecFlow;
 
 namespace SharpDomain.CoreDomains.ProjectManagement.Specs
@@ -24,7 +25,7 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
             ScenarioContext.Current.Set<IAggregateRepositoryFactory>(repositoryFactory);
             ScenarioContext.Current.Set<IAggregateFactory>(aggregateFactory);
             ScenarioContext.Current.Set<INewGuidGenerator>(idGen);
-            ScenarioContext.Current.Set<CreateProjectHandler>(handler);
+            ScenarioContext.Current.Set<ICommandHandler<CreateProject>>(handler);
         }
 
         [Given(@"a new create project command with ""(.*)"", ""(.*)"", ""(.*)"" and ""(.*)""")]
@@ -44,7 +45,7 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
         public void WhenTheCommandIsHandledByTheCreateProjectCommandHandler()
         {
             var command = ScenarioContext.Current.Get<CreateProject>();
-            var handler = ScenarioContext.Current.Get<CreateProjectHandler>();
+            var handler = ScenarioContext.Current.Get<ICommandHandler<CreateProject>>();
 
             handler.HandleCommand(command);
         }

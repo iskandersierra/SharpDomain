@@ -4,13 +4,13 @@ using SharpDomain.CoreDomains.ProjectManagement.Commands;
 using SharpDomain.CoreDomains.ProjectManagement.Events;
 using SharpDomain.Messaging;
 
-namespace ProjectManagement.CommandHandlers
+namespace SharpDomain.CoreDomains.ProjectManagement.CommandHandlers
 {
     public class CreateProjectHandler : ICommandHandler<CreateProject>
     {
-        private IAggregateRepositoryFactory _repositoryFactory;
-        private IAggregateFactory _aggregateFactory;
-        private INewGuidGenerator _guidGenerator;
+        private readonly IAggregateRepositoryFactory _repositoryFactory;
+        private readonly IAggregateFactory _aggregateFactory;
+        private readonly INewGuidGenerator _guidGenerator;
 
         public CreateProjectHandler(IAggregateRepositoryFactory repositoryFactory, IAggregateFactory aggregateFactory, INewGuidGenerator guidGenerator)
         {
@@ -52,7 +52,6 @@ namespace ProjectManagement.CommandHandlers
                 var commitId = _guidGenerator.NewId();
                 repository.Save(project, commitId);
             }
-
         }
     }
 }
