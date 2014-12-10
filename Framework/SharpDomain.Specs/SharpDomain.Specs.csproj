@@ -61,24 +61,6 @@
       <DependentUpon>AggregateFactory.feature</DependentUpon>
     </Compile>
     <Compile Include="Business\Steps\AggregateSteps.cs" />
-    <Compile Include="Messaging\Envelope.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Envelope.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Messaging\ExtensionsToICommandBus.feature.cs">
-      <DependentUpon>ExtensionsToICommandBus.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Messaging\Steps\EnvelopeSteps.cs" />
-    <Compile Include="Messaging\ExtensionsToIEventBus.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExtensionsToIEventBus.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Messaging\Steps\ExtensionsToICommandBusSteps.cs" />
-    <Compile Include="Messaging\Steps\ExtensionsToIEventBusSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonSteps.cs" />
   </ItemGroup>
@@ -97,18 +79,6 @@
     <None Include="Business\AggregateFactory.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AggregateFactory.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Messaging\Envelope.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Envelope.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Messaging\ExtensionsToICommandBus.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ExtensionsToICommandBus.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Messaging\ExtensionsToIEventBus.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ExtensionsToIEventBus.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
