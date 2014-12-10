@@ -7,6 +7,7 @@ using SharpDomain.CoreDomains.ProjectManagement.CommandHandlers;
 using SharpDomain.CoreDomains.ProjectManagement.Commands;
 using SharpDomain.CoreDomains.ProjectManagement.Events;
 using SharpDomain.Messaging;
+using SharpDomain.Processing;
 using TechTalk.SpecFlow;
 
 namespace SharpDomain.CoreDomains.ProjectManagement.Specs

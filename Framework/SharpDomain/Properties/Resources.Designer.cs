@@ -61,6 +61,15 @@ namespace SharpDomain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error is already registered within this processing context.
+        /// </summary>
+        public static string AnErrorIsAlreadyRegistered {
+            get {
+                return ResourceManager.GetString("AnErrorIsAlreadyRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot apply creation event {0} to {1} with empty identifier.
         /// </summary>
         public static string CannotApplyEmptyIdCreationId {
@@ -111,6 +120,15 @@ namespace SharpDomain.Properties {
         public static string EventImplementNonVersionedInterfaces {
             get {
                 return ResourceManager.GetString("EventImplementNonVersionedInterfaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token {0} for type {1} is already set.
+        /// </summary>
+        public static string TokenIsAlreadySet {
+            get {
+                return ResourceManager.GetString("TokenIsAlreadySet", resourceCulture);
             }
         }
         

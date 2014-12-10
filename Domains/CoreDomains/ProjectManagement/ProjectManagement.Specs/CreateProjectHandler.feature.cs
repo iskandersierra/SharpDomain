@@ -34,8 +34,8 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateProjectHandler", "This class implements the creation of a new project int Project Management Bounde" +
-                    "d Context", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateProjectHandler", "This class implements the creation of a new project in Project Management Bounded" +
+                    " Context", ProgrammingLanguage.CSharp, new string[] {
                         "boundedcontext",
                         "projectmanagement"});
             testRunner.OnFeatureStart(featureInfo);
@@ -73,6 +73,10 @@ namespace SharpDomain.CoreDomains.ProjectManagement.Specs
         [NUnit.Framework.DescriptionAttribute("Project creation command with correct data must generate a new project and emmit " +
             "corresponding events")]
         [NUnit.Framework.TestCaseAttribute("project1", "Project #1", "Proj. Desc. #1", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B1}", null)]
+        [NUnit.Framework.TestCaseAttribute("project2", "Project #2", "", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B2}", null)]
+        [NUnit.Framework.TestCaseAttribute("project2", "", "Proj. Desc. #3", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B3}", null)]
+        [NUnit.Framework.TestCaseAttribute("", "Project #2", "Proj. Desc. #4", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B4}", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "2", "2", "{0664E10F-A50A-4540-92EB-64AD8D7837B5}", null)]
         public virtual void ProjectCreationCommandWithCorrectDataMustGenerateANewProjectAndEmmitCorrespondingEvents(string name, string title, string description, string events, string newVersion, string projectId, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Project creation command with correct data must generate a new project and emmit " +

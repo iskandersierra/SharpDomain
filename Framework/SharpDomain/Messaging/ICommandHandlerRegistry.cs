@@ -1,4 +1,6 @@
-﻿namespace SharpDomain.Messaging
+﻿using SharpDomain.Processing;
+
+namespace SharpDomain.Messaging
 {
     public interface ICommandHandlerRegistry
     {

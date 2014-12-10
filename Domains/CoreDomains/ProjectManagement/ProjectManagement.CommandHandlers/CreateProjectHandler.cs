@@ -3,9 +3,16 @@ using SharpDomain.Business;
 using SharpDomain.CoreDomains.ProjectManagement.Commands;
 using SharpDomain.CoreDomains.ProjectManagement.Events;
 using SharpDomain.Messaging;
+using SharpDomain.Processing;
 
 namespace SharpDomain.CoreDomains.ProjectManagement.CommandHandlers
 {
+
+    /// <summary>
+    /// Responsibility of this command handler must exclusively be convert a command into the emmission
+    /// of events, at the same time it serve as a joint-point in the system to other componentts to cut
+    /// and introduce their resposibility like ligging, validation, etc.
+    /// </summary>
     public class CreateProjectHandler : ICommandHandler<CreateProject>
     {
         private readonly IAggregateRepositoryFactory _repositoryFactory;
@@ -24,7 +31,7 @@ namespace SharpDomain.CoreDomains.ProjectManagement.CommandHandlers
             // Some steps could be marked as ASPECT if they can be factored out of the handler
             // Steps
             // - [ASPECT] Log command handling start. Event sourced to another UX service?
-            // - [ASPECT] Monitor performance
+            // - [ASPECT] Monitor performance, count hits
             // - [ASPECT] Validate command
             // - Create new aggregate from factory
             // - [ASPECT] Validate security before command application

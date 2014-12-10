@@ -50,6 +50,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivateProjectHandler.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivateProjectHandler.feature</DependentUpon>
+    </Compile>
     <Compile Include="CommonSteps.cs" />
     <Compile Include="CreateProjectHandler.feature.cs">
       <AutoGen>True</AutoGen>
@@ -60,6 +65,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActivateProjectHandler.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActivateProjectHandler.feature.cs</LastGenOutput>
+    </None>
     <None Include="App.config" />
     <None Include="CreateProjectHandler.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

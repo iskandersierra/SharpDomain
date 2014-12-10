@@ -3,6 +3,7 @@ using SharpDomain.Business;
 using SharpDomain.CoreDomains.ProjectManagement.Commands;
 using SharpDomain.CoreDomains.ProjectManagement.Events;
 using SharpDomain.Messaging;
+using SharpDomain.Processing;
 
 namespace SharpDomain.CoreDomains.ProjectManagement.CommandHandlers
 {

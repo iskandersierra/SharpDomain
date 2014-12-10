@@ -138,4 +138,10 @@
   <data name="CreationEventVersionMustBeOne" xml:space="preserve">
     <value>Creation event version must be always 1</value>
   </data>
+  <data name="TokenIsAlreadySet" xml:space="preserve">
+    <value>Token {0} for type {1} is already set</value>
+  </data>
+  <data name="AnErrorIsAlreadyRegistered" xml:space="preserve">
+    <value>An error is already registered within this processing context</value>
+  </data>
 </root>
