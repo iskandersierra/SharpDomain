@@ -3,19 +3,20 @@ using SharpDomain.EventSourcing;
 
 namespace ContactsContext.Commands
 {
-    public interface CreateLabelType : ICreateAggregateCommand
+    public interface LabelTypeCommand : ICommand
     {
         Guid LabelTypeId { get; set; }
+    }
+    public interface CreateLabelType : LabelTypeCommand, ICreateAggregateCommand
+    {
         string Title { get; set; }
         bool IsExternal { get; set; }
     }
-    public interface UpdateLabelTypeTitle : ICommand
+    public interface UpdateLabelTypeTitle : LabelTypeCommand
     {
-        Guid LabelTypeId { get; set; }
         string Title { get; set; }
     }
-    public interface DeleteLabelType : ICommand
+    public interface DeleteLabelType : LabelTypeCommand
     {
-        Guid LabelTypeId { get; set; }
     }
 }

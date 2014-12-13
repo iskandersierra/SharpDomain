@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Moq;
 using NUnit.Framework;
 using SharpDomain.EventSourcing;
 using TechTalk.SpecFlow;
 
-namespace ContactsContext.CommandHandling.Specs
+namespace ContactsContext.EventSourcing.Specs
 {
     [Binding]
     public class CommonSteps

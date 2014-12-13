@@ -3,75 +3,66 @@ using SharpDomain.EventSourcing;
 
 namespace ContactsContext.Commands
 {
-    public interface CreateContact : ICreateAggregateCommand
+    public interface ContactCommand : ICommand
     {
         Guid ContactId { get; set; }
+    }
+    public interface CreateContact : ContactCommand, ICreateAggregateCommand
+    {
         string Title { get; set; }
     }
-    public interface UpdateContactTitle : ICommand
+    public interface UpdateContactTitle : ContactCommand
     {
-        Guid ContactId { get; set; }
         string Title { get; set; }
     }
-    public interface UpdateContactPicture : ICommand
+    public interface UpdateContactPicture : ContactCommand
     {
-        Guid ContactId { get; set; }
         Guid PictureId { get; set; }
     }
-    public interface ClearContactPicture : ICommand
+    public interface ClearContactPicture : ContactCommand
     {
-        Guid ContactId { get; set; }
     }
 
-    public interface IncludeContactCategory : ICommand
+    public interface ContactCategoryCommand : ContactCommand
     {
-        Guid ContactId { get; set; }
         Guid CategoryId { get; set; }
     }
-    public interface ExcludeContactCategory : ICommand
+    public interface IncludeContactCategory : ContactCategoryCommand
     {
-        Guid ContactId { get; set; }
-        Guid CategoryId { get; set; }
+    }
+    public interface ExcludeContactCategory : ContactCategoryCommand
+    {
     }
 
-    public interface IncludeContactLabel : ICommand
+    public interface ContactLabelCommand : ContactCommand
     {
-        Guid ContactId { get; set; }
         Guid LabelTypeId { get; set; }
         string Label { get; set; }
     }
-    public interface ExcludeContactLabel : ICommand
+    public interface IncludeContactLabel : ContactLabelCommand
     {
-        Guid ContactId { get; set; }
-        Guid LabelTypeId { get; set; }
-        string Label { get; set; }
     }
-    public interface UpdateContactLabel : ICommand
+    public interface ExcludeContactLabel : ContactLabelCommand
     {
-        Guid ContactId { get; set; }
-        Guid LabelTypeId { get; set; }
-        string CurrentLabel { get; set; }
+    }
+    public interface UpdateContactLabel : ContactLabelCommand
+    {
         string NewLabel { get; set; }
     }
 
-    public interface IncludeContactInfo : ICommand
+    public interface ContactInfoCommand : ContactCommand
     {
-        Guid ContactId { get; set; }
         Guid ContactInfoTypeId { get; set; }
         string Info { get; set; }
     }
-    public interface ExcludeContactInfo : ICommand
+    public interface IncludeContactInfo : ContactInfoCommand
     {
-        Guid ContactId { get; set; }
-        Guid ContactInfoTypeId { get; set; }
-        string Info { get; set; }
     }
-    public interface UpdateContactInfo : ICommand
+    public interface ExcludeContactInfo : ContactInfoCommand
     {
-        Guid ContactId { get; set; }
-        Guid ContactInfoTypeId { get; set; }
-        string CurrentInfo { get; set; }
+    }
+    public interface UpdateContactInfo : ContactInfoCommand
+    {
         string NewInfo { get; set; }
     }
-
 }

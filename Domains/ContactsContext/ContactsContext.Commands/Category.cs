@@ -3,19 +3,20 @@ using SharpDomain.EventSourcing;
 
 namespace ContactsContext.Commands
 {
-    public interface CreateCategory : ICreateAggregateCommand
+    public interface CategoryCommand : ICommand
     {
         Guid CategoryId { get; set; }
+    }
+    public interface CreateCategory : CategoryCommand, ICreateAggregateCommand
+    {
         string Title { get; set; }
         bool IsExternal { get; set; }
     }
-    public interface UpdateCategoryTitle : ICommand
+    public interface UpdateCategoryTitle : CategoryCommand
     {
-        Guid CategoryId { get; set; }
         string Title { get; set; }
     }
-    public interface DeleteCategory : ICommand
+    public interface DeleteCategory : CategoryCommand
     {
-        Guid CategoryId { get; set; }
     }
 }

@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactInfo.cs" />
-    <Compile Include="Label.cs" />
+    <Compile Include="ContactInfoType.cs" />
+    <Compile Include="LabelType.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
