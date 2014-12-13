@@ -51,8 +51,8 @@ namespace SharpDomain.Reflection
             var builder = _module.DefineType(typeName,
                 TypeAttributes.Serializable |
                 TypeAttributes.Class |
-                TypeAttributes.Public |
-                TypeAttributes.Sealed,
+                TypeAttributes.Public,
+                //TypeAttributes.Sealed,
                 typeof(object));
 
             builder.DefineDefaultConstructor(MethodAttributes.Public);
@@ -61,8 +61,15 @@ namespace SharpDomain.Reflection
 
             foreach (var property in allProperties)
             {
-                CreateProperty(builder, property);
+                var propertyBuilder = CreateProperty(builder, property);
             }
+
+            var proxyAttr =
+                new CustomAttributeBuilder(typeof (DaoInterfaceProxyForAttribute).GetConstructor(new[] {typeof (Type)}),
+                    new object[] {interfaceType});
+            builder.SetCustomAttribute(proxyAttr);
+
+            builder.AddInterfaceImplementation(interfaceType);
 
             var type = builder.CreateType();
 
@@ -95,38 +102,44 @@ namespace SharpDomain.Reflection
 
         private static MethodBuilder BuildGetMethod(TypeBuilder builder, PropertyInfo property, FieldBuilder field)
         {
-            var method = builder.DefineMethod("get_" + property.Name,
-                MethodAttributes.Public |
-                MethodAttributes.SpecialName |
-                MethodAttributes.HideBySig |
-                MethodAttributes.Final |
-                MethodAttributes.Virtual |
-                MethodAttributes.VtableLayoutMask,
-                property.PropertyType,
-                Type.EmptyTypes);
+            var method = builder.DefineMethod(
+                "get_" + property.Name
+                , MethodAttributes.Public 
+                | MethodAttributes.SpecialName 
+                | MethodAttributes.HideBySig 
+                | MethodAttributes.Final 
+                | MethodAttributes.Virtual 
+                | MethodAttributes.VtableLayoutMask
+                , property.PropertyType
+                , Type.EmptyTypes);
 
             var il = method.GetILGenerator();
+            //var local = il.DeclareLocal(property.PropertyType);
             // return this._Property
             // - LoadArg this (0)
             // - LoadField _Property
             // - Ret
+            il.Emit(OpCodes.Nop);
             il.Emit(OpCodes.Ldarg_0);
             il.Emit(OpCodes.Ldfld, field);
+            //il.Emit(OpCodes.Stloc, local);
+            //il.Emit(OpCodes.Ldloc, local);
             il.Emit(OpCodes.Ret);
 
             return method;
         }
         private static MethodBuilder BuildSetMethod(TypeBuilder builder, PropertyInfo property, FieldBuilder field)
         {
-            var method = builder.DefineMethod("set_" + property.Name,
-                MethodAttributes.Public |
-                MethodAttributes.SpecialName |
-                MethodAttributes.HideBySig |
-                MethodAttributes.Final |
-                MethodAttributes.Virtual |
-                MethodAttributes.VtableLayoutMask,
-                property.PropertyType,
-                new[] { property.PropertyType });
+            var method = builder.DefineMethod(
+                "set_" + property.Name
+                , MethodAttributes.Public
+                | MethodAttributes.SpecialName
+                | MethodAttributes.HideBySig
+                | MethodAttributes.Final
+                | MethodAttributes.Virtual
+                | MethodAttributes.VtableLayoutMask
+                , returnType: null
+                , parameterTypes: new[] { property.PropertyType });
 
             var il = method.GetILGenerator();
             // this._Property = value
@@ -143,7 +156,8 @@ namespace SharpDomain.Reflection
         }
         private static FieldBuilder BuildField(TypeBuilder builder, PropertyInfo property)
         {
-            return builder.DefineField("_" + property.Name,
+            return builder.DefineField(
+                "_" + property.Name,
                 property.PropertyType,
                 FieldAttributes.Private);
         }
@@ -248,4 +262,16 @@ namespace SharpDomain.Reflection
             }
         }
     }
+
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+    public sealed class DaoInterfaceProxyForAttribute : Attribute
+    {
+        public DaoInterfaceProxyForAttribute(Type daoInterfaceType)
+        {
+            DaoInterfaceType = daoInterfaceType;
+        }
+
+        public Type DaoInterfaceType { get; private set; }  
+    }
+
 }

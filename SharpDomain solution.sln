@@ -44,6 +44,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsContext.CommandHand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsContext.Events", "Domains\ContactsContext\ContactsContext.Events\ContactsContext.Events.csproj", "{A3A2EB5B-DE34-4419-8034-DFF649550BF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specs", "Specs", "{F0D34059-3D01-4FBA-8E1C-B2599D2BA2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsContext.CommandHandling.Specs", "Domains\ContactsContext\Specs\ContactsContext.CommandHandling.Specs\ContactsContext.CommandHandling.Specs.csproj", "{D614BA02-C3A6-4F9D-B30E-762C11109587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.TestConsole", "Framework\SharpDomain.TestConsole\SharpDomain.TestConsole.csproj", "{071D15F2-1164-4642-B389-BA0718C02187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +76,14 @@ Global
 		{A3A2EB5B-DE34-4419-8034-DFF649550BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3A2EB5B-DE34-4419-8034-DFF649550BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3A2EB5B-DE34-4419-8034-DFF649550BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D614BA02-C3A6-4F9D-B30E-762C11109587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D614BA02-C3A6-4F9D-B30E-762C11109587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D614BA02-C3A6-4F9D-B30E-762C11109587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D614BA02-C3A6-4F9D-B30E-762C11109587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071D15F2-1164-4642-B389-BA0718C02187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071D15F2-1164-4642-B389-BA0718C02187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071D15F2-1164-4642-B389-BA0718C02187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071D15F2-1164-4642-B389-BA0718C02187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +97,8 @@ Global
 		{70C66BD1-BC09-4311-940C-5E508F66803C} = {A5D082E2-DCA9-4182-BD2D-DF463D56B12B}
 		{C31CA4AB-A6B8-4164-944A-5AAF13D800E3} = {A5D082E2-DCA9-4182-BD2D-DF463D56B12B}
 		{A3A2EB5B-DE34-4419-8034-DFF649550BF1} = {A5D082E2-DCA9-4182-BD2D-DF463D56B12B}
+		{F0D34059-3D01-4FBA-8E1C-B2599D2BA2E0} = {A5D082E2-DCA9-4182-BD2D-DF463D56B12B}
+		{D614BA02-C3A6-4F9D-B30E-762C11109587} = {F0D34059-3D01-4FBA-8E1C-B2599D2BA2E0}
+		{071D15F2-1164-4642-B389-BA0718C02187} = {F8D6671F-DAA2-4A25-B408-34E98284A5A8}
 	EndGlobalSection
 EndGlobal

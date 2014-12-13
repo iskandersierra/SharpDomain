@@ -15,7 +15,7 @@ namespace ContactsContext.CommandHandling
             context.Emmit<ContactTitleUpdated>(e =>
             {
                 e.ContactId = command.ContactId;
-                e.Title = e.Title;
+                e.Title = command.Title;
             });
         }
     }
