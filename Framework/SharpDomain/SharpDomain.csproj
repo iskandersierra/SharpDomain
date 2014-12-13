@@ -69,10 +69,10 @@
     <Compile Include="Business\StatefulAggregate.cs" />
     <Compile Include="EventSourcing\ICommandHandlerContext.cs" />
     <Compile Include="EventSourcing\ICreateAggregateCommand.cs" />
-    <Compile Include="ICommandsService.cs" />
     <Compile Include="EventSourcing\IAggregateCreatedEvent.cs" />
     <Compile Include="EventSourcing\IEvent.cs" />
     <Compile Include="EventSourcing\ICommand.cs" />
+    <Compile Include="EventSourcing\IMessageCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +83,7 @@
     <Compile Include="Querying\IPagedCollection.cs" />
     <Compile Include="Querying\PagedCollection.cs" />
     <Compile Include="AccessControl\IAccessControlService.cs" />
+    <Compile Include="Reflection\DaoInterfaceCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
