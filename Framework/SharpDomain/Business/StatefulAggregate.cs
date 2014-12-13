@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using SharpDomain.Messaging;
+using SharpDomain.EventSourcing;
 using SharpDomain.Properties;
 
 namespace SharpDomain.Business

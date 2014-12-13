@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using SharpDomain.Messaging;
+using SharpDomain.EventSourcing;
 
 namespace SharpDomain.Business
 {
@@ -20,8 +19,6 @@ namespace SharpDomain.Business
         void ApplyEvent(IEvent @event);
 
         IEnumerable<IEvent> UncommittedEvents { get; }
-
-        //void ClearUncommittedEvents();
     }
 
     public interface IAggregateWithCommittedEvents : IAggregate

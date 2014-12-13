@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using SharpDomain.Business;
-using SharpDomain.Messaging;
+using SharpDomain.EventSourcing;
 using TechTalk.SpecFlow;
 
 namespace SharpDomain.Specs.Business.Steps
@@ -233,12 +233,15 @@ namespace SharpDomain.Specs.Business.Steps
 
     }
 
-    internal class TestAggregateCreatedEvent : AggregateCreatedEvent, TestAggregateCreated
+    internal class TestAggregateCreatedEvent : TestAggregateCreated
     {
         public TestAggregateCreatedEvent(Guid sourceId)
-            : base(sourceId)
         {
+            SourceId = sourceId;
         }
+
+        public Guid SourceId { get; set; }
+        public int Version { get; set; }
     }
 
     internal interface TestAggregateModified : IEvent
@@ -246,9 +249,11 @@ namespace SharpDomain.Specs.Business.Steps
         string Value { get; set; }
     }
 
-    internal class TestAggregateModifiedEvent : Event, TestAggregateModified
+    internal class TestAggregateModifiedEvent : TestAggregateModified
     {
         public string Value { get; set; }
+        public Guid SourceId { get; set; }
+        public int Version { get; set; }
     }
 
     internal interface TestAggregateModified_V2 : TestAggregateModified
@@ -265,8 +270,10 @@ namespace SharpDomain.Specs.Business.Steps
     {
     }
 
-    internal class TestAggregateOtherEvent : Event, TestAggregateOther
+    internal class TestAggregateOtherEvent : TestAggregateOther
     {
+        public Guid SourceId { get; set; }
+        public int Version { get; set; }
     }
 
     #endregion

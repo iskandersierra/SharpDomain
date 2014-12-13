@@ -1,7 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
 using SharpDomain.Business;
-using SharpDomain.Messaging;
 using TechTalk.SpecFlow;
 
 namespace SharpDomain.Specs

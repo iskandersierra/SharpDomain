@@ -1,4 +1,4 @@
-﻿namespace SharpDomain.Messaging
+﻿namespace SharpDomain.EventSourcing
 {
     public interface IAggregateCreatedEvent : IEvent
     {

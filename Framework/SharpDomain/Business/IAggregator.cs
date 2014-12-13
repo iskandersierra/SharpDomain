@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SharpDomain.Messaging;
+using SharpDomain.EventSourcing;
 
 namespace SharpDomain.Business
 {

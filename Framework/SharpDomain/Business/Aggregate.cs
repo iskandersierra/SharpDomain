@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using SharpDomain.Messaging;
+using SharpDomain.EventSourcing;
 using SharpDomain.Properties;
 
 namespace SharpDomain.Business
@@ -46,9 +46,8 @@ namespace SharpDomain.Business
                 _version += 1;
             }
 
-            var updEv = @event as IUpdateableEvent;
-            if (updEv != null)
-                updEv.UpdateEvent(_id, _version);
+            @event.SourceId = _id;
+            @event.Version = _version;
 
             ApplyOverride(@event);
 
