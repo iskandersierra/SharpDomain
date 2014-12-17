@@ -46,6 +46,7 @@
     <Compile Include="AccessControl\AccessType.cs" />
     <Compile Include="AccessControl\IAccessControlRequest.cs" />
     <Compile Include="AccessControl\IAccessControlResponse.cs" />
+    <Compile Include="Automation\ISimpleCommand.cs" />
     <Compile Include="Business\Aggregate.cs" />
     <Compile Include="Business\IAggregateRepositoryFactory.cs" />
     <Compile Include="Business\ITypedAggregateFactory.cs" />
