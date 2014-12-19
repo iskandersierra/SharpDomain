@@ -58,19 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonSteps.cs" />
-    <Compile Include="ContactCommandHandlers.feature.cs">
+    <Compile Include="ContactProcessors.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContactCommandHandlers.feature</DependentUpon>
+      <DependentUpon>ContactProcessors.feature</DependentUpon>
     </Compile>
     <Compile Include="ContactSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ContactCommandHandlers.feature">
+    <None Include="ContactProcessors.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ContactCommandHandlers.feature.cs</LastGenOutput>
+      <LastGenOutput>ContactProcessors.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

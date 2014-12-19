@@ -12,45 +12,24 @@ namespace ContactsContext.EventSourcing.Specs
     {
         private static readonly DefaultMessageCreator MessageCreator = new DefaultMessageCreator();
 
-        #region [ Given command handlers ]
-        [Given(@"a create contact command handler")]
-        public void GivenACreateContactCommandHandler()
+        #region [ Given command processors ]
+        [Given(@"a contact command processor")]
+        public void GivenAContactProcessor()
         {
-            var handler = new CreateContactCommandHandler();
+            var processor = new ContactCommandProcessor();
 
-            ScenarioContext.Current.Set(handler);
+            ScenarioContext.Current.Set(processor);
         }
-        [Given(@"a update contact title command handler")]
-        public void GivenAUpdateContactTitleCommandHandler()
+        #endregion [ Given command processors ]
+
+        #region [ Given command processor context ]
+        [Given(@"a command processor context")]
+        public void GivenACommandProcessorContext()
         {
-            var handler = new UpdateContactTitleCommandHandler();
-
-            ScenarioContext.Current.Set(handler);
+            var context = new CommandProcessorContextMock();
+            ScenarioContext.Current.Set<ICommandProcessorContext>(context);
         }
-        [Given(@"a update contact picture command handler")]
-        public void GivenAUpdateContactPictureCommandHandler()
-        {
-            var handler = new UpdateContactPictureCommandHandler();
-
-            ScenarioContext.Current.Set(handler);
-        }
-        [Given(@"a clear contact picture command handler")]
-        public void GivenAClearContactPictureCommandHandler()
-        {
-            var handler = new ClearContactPictureCommandHandler();
-
-            ScenarioContext.Current.Set(handler);
-        }
-        #endregion [ Given command handlers ]
-
-        #region [ Given command handler context ]
-        [Given(@"a command handler context")]
-        public void GivenACommandHandlerContext()
-        {
-            var context = new CommandHandlerContextMock();
-            ScenarioContext.Current.Set(context);
-        }
-        #endregion [ Given command handler context ]
+        #endregion [ Given command processor context ]
 
         #region [ Given commands ]
         [Given(@"a create contact command is created with ""(.*)"" and ""(.*)""")]
@@ -94,88 +73,88 @@ namespace ContactsContext.EventSourcing.Specs
         }
         #endregion [ Given commands ]
 
-        #region [ When handling commands ]
-        [When(@"the create contact command handler handles the command")]
-        public void WhenTheCreateContactCommandHandlerHandlesTheCommand()
+        #region [ When processing commands ]
+        [When(@"the create contact command processor processes the command")]
+        public void WhenTheCreateContactProcessorProcessesTheCommand()
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = ScenarioContext.Current.Get<ICommandProcessorContext>();
             var command = ScenarioContext.Current.Get<CreateContact>();
-            var handler = ScenarioContext.Current.Get<CreateContactCommandHandler>();
+            var processor = ScenarioContext.Current.Get<ContactCommandProcessor>();
 
-            handler.Handle(command, context);
+            processor.Process(command, context);
         }
-        [When(@"the update contact title command handler handles the command")]
-        public void WhenTheUpdateContactTitleCommandHandlerHandlesTheCommand()
+        [When(@"the update contact title command processor processes the command")]
+        public void WhenTheUpdateContactTitleCommandprocessorprocessesTheCommand()
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = ScenarioContext.Current.Get<ICommandProcessorContext>();
             var command = ScenarioContext.Current.Get<UpdateContactTitle>();
-            var handler = ScenarioContext.Current.Get<UpdateContactTitleCommandHandler>();
+            var processor = ScenarioContext.Current.Get<ContactCommandProcessor>();
 
-            handler.Handle(command, context);
+            processor.Process(command, context);
         }
-        [When(@"the update contact picture command handler handles the command")]
-        public void WhenTheUpdateContactPictureCommandHandlerHandlesTheCommand()
+        [When(@"the update contact picture command processor processes the command")]
+        public void WhenTheUpdateContactPictureCommandprocessorprocessesTheCommand()
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = ScenarioContext.Current.Get<ICommandProcessorContext>();
             var command = ScenarioContext.Current.Get<UpdateContactPicture>();
-            var handler = ScenarioContext.Current.Get<UpdateContactPictureCommandHandler>();
+            var processor = ScenarioContext.Current.Get<ContactCommandProcessor>();
 
-            handler.Handle(command, context);
+            processor.Process(command, context);
         }
-        [When(@"the clear contact picture command handler handles the command")]
-        public void WhenTheClearContactPictureCommandHandlerHandlesTheCommand()
+        [When(@"the clear contact picture command processor processes the command")]
+        public void WhenTheClearContactPictureCommandprocessorprocessesTheCommand()
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = ScenarioContext.Current.Get<ICommandProcessorContext>();
             var command = ScenarioContext.Current.Get<ClearContactPicture>();
-            var handler = ScenarioContext.Current.Get<ClearContactPictureCommandHandler>();
+            var processor = ScenarioContext.Current.Get<ContactCommandProcessor>();
 
-            handler.Handle(command, context);
+            processor.Process(command, context);
         }
-        #endregion [ When handling commands ]
+        #endregion [ When processing commands ]
 
         #region [ Then ]
-        [Then(@"the command handler context has (.*) emmitted events")]
-        public void ThenTheCommandHandlerContextHasEmmittedEvents(int eventCount)
+        [Then(@"the command processor context has (.*) emmitted events")]
+        public void ThenTheCommandprocessorContextHasEmmittedEvents(int eventCount)
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             Assert.That(context.EmmittedEvents.Count, Is.EqualTo(eventCount));
         }
 
-        [Then(@"the command handler context has a contact created event as event (.*) with ""(.*)""")]
-        public void ThenTheCommandHandlerContextHasAContactCreatedEventAsEventWith(int pos, Guid commandId)
+        [Then(@"the command processor context has a contact created event as event (.*) with ""(.*)""")]
+        public void ThenTheCommandprocessorContextHasAContactCreatedEventAsEventWith(int pos, Guid commandId)
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             var @event = context.EmmittedEvents[pos - 1] as ContactCreated;
             Assert.That(@event, Is.Not.Null);
             Assert.That(@event.SourceId, Is.EqualTo(commandId));
         }
 
-        [Then(@"the command handler context has a contact title updated event as event (.*) with ""(.*)"" and ""(.*)""")]
-        public void ThenTheCommandHandlerContextHasAContactTitleUpdatedEventAsEventWithAnd(int pos, Guid commandId, string title)
+        [Then(@"the command processor context has a contact title updated event as event (.*) with ""(.*)"" and ""(.*)""")]
+        public void ThenTheCommandprocessorContextHasAContactTitleUpdatedEventAsEventWithAnd(int pos, Guid commandId, string title)
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             var @event = context.EmmittedEvents[pos - 1] as ContactTitleUpdated;
             Assert.That(@event, Is.Not.Null);
             Assert.That(@event.SourceId, Is.EqualTo(commandId));
             Assert.That(@event.Title, Is.EqualTo(title));
         }
-        [Then(@"the command handler context has a contact picture updated event as event (.*) with ""(.*)"" and ""(.*)""")]
-        public void ThenTheCommandHandlerContextHasAContactPictureUpdatedEventAsEventWithAnd(int pos, Guid commandId, Guid pictureId)
+        [Then(@"the command processor context has a contact picture updated event as event (.*) with ""(.*)"" and ""(.*)""")]
+        public void ThenTheCommandprocessorContextHasAContactPictureUpdatedEventAsEventWithAnd(int pos, Guid commandId, Guid pictureId)
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             var @event = context.EmmittedEvents[pos - 1] as ContactPictureUpdated;
             Assert.That(@event, Is.Not.Null);
             Assert.That(@event.SourceId, Is.EqualTo(commandId));
             Assert.That(@event.PictureId, Is.EqualTo(pictureId));
         }
-        [Then(@"the command handler context has a contact picture cleared event as event (.*) with ""(.*)""")]
-        public void ThenTheCommandHandlerContextHasAContactPictureClearedEventAsEventWith(int pos, Guid commandId)
+        [Then(@"the command processor context has a contact picture cleared event as event (.*) with ""(.*)""")]
+        public void ThenTheCommandprocessorContextHasAContactPictureClearedEventAsEventWith(int pos, Guid commandId)
         {
-            var context = ScenarioContext.Current.Get<CommandHandlerContextMock>();
+            var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             var @event = context.EmmittedEvents[pos - 1] as ContactPictureCleared;
             Assert.That(@event, Is.Not.Null);

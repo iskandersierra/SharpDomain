@@ -152,6 +152,24 @@ namespace MSMQConsoleSnoop
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Total number of deleted private queues: {0}", queues.Length);
         }
+
+        [Description("Creates a private MS message queues on current machine")]
+        public void msmqc(string queueName)
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            var path = @".\Private$\" + queueName;
+            if (MessageQueue.Exists(path))
+            {
+                Console.WriteLine("Queue {0} already exist", path);
+            }
+            else
+            {
+                Console.Write("Creating queue {0} ... ", path);
+                MessageQueue.Create(path);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("ok!");
+            }
+        }
         #endregion [ MSMQ ]
     }
 

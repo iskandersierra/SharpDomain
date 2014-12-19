@@ -4,9 +4,13 @@ using SharpDomain.EventSourcing;
 
 namespace ContactsContext.EventSourcing
 {
-    public class CreateContactCommandHandler
+    public class ContactCommandProcessor : 
+        ICommandProcessor<CreateContact>,
+        ICommandProcessor<UpdateContactTitle>,
+        ICommandProcessor<UpdateContactPicture>,
+        ICommandProcessor<ClearContactPicture>
     {
-        public void Handle(CreateContact command, ICommandHandlerContext context)
+        public void Process(CreateContact command, ICommandProcessorContext context)
         {
             context.Emmit<ContactCreated>(e =>
             {
@@ -18,10 +22,8 @@ namespace ContactsContext.EventSourcing
                 e.Title = command.Title;
             });
         }
-    }
-    public class UpdateContactTitleCommandHandler
-    {
-        public void Handle(UpdateContactTitle command, ICommandHandlerContext context)
+
+        public void Process(UpdateContactTitle command, ICommandProcessorContext context)
         {
             context.Emmit<ContactTitleUpdated>(e =>
             {
@@ -29,10 +31,8 @@ namespace ContactsContext.EventSourcing
                 e.Title = command.Title;
             });
         }
-    }
-    public class UpdateContactPictureCommandHandler
-    {
-        public void Handle(UpdateContactPicture command, ICommandHandlerContext context)
+
+        public void Process(UpdateContactPicture command, ICommandProcessorContext context)
         {
             context.Emmit<ContactPictureUpdated>(e =>
             {
@@ -40,10 +40,8 @@ namespace ContactsContext.EventSourcing
                 e.PictureId = command.PictureId;
             });
         }
-    }
-    public class ClearContactPictureCommandHandler
-    {
-        public void Handle(ClearContactPicture command, ICommandHandlerContext context)
+
+        public void Process(ClearContactPicture command, ICommandProcessorContext context)
         {
             context.Emmit<ContactPictureCleared>(e =>
             {
@@ -51,5 +49,4 @@ namespace ContactsContext.EventSourcing
             });
         }
     }
-
 }

@@ -18,9 +18,9 @@ namespace ContactsContext.TestConsole
                 //Console.WriteLine("Press 'Enter' to send new message.To exit, Ctrl + C");
 
                 var watch = Stopwatch.StartNew();
-                for (int i = 0; i < 1; i++)
+                for (int i = 0; i < 1000; i++)
                 {
-                    var iskId = Magnum.CombGuid.Generate();
+                    var iskId = Guid.NewGuid();
                     var iskTitle = "Iskander #" + i;
                     SendCreateContact(bus, iskId, iskTitle);
                 }
@@ -35,7 +35,7 @@ namespace ContactsContext.TestConsole
 
         private static void SendCreateContact(IStartableBus bus, Guid contactId, string contactTitle)
         {
-            Console.Write(@"Sending CREATE COMMAND for ""{0}""... ", contactTitle);
+            //Console.Write(@"Sending CREATE COMMAND for ""{0}""... ", contactTitle);
 
             //bus.Send("CoreDomains.ContactsContext.Server", 
             //    new CreateContactCommand
@@ -49,7 +49,7 @@ namespace ContactsContext.TestConsole
                 cc.Title = contactTitle;
             });
 
-            Console.WriteLine("OK!");
+            //Console.WriteLine("OK!");
         }
 
         private static BusConfiguration CreateBusConfiguration()

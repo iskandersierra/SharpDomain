@@ -55,17 +55,17 @@ namespace ContactsContext.EventSourcing.Specs
         }
     }
 
-    public class CommandHandlerContextMock : ICommandHandlerContext
+    public class CommandProcessorContextMock : ICommandProcessorContext
     {
-        public List<object> EmmittedEvents = new List<object>();
-        private IMessageCreator MessageCreator;
+        public readonly List<IEvent> EmmittedEvents = new List<IEvent>();
+        private readonly IMessageCreator MessageCreator;
 
-        public CommandHandlerContextMock()
+        public CommandProcessorContextMock()
         {
             MessageCreator = new DefaultMessageCreator();
         }
 
-        public void Emmit<T>(Action<T> action) where T : class
+        public void Emmit<T>(Action<T> action) where T : class, IEvent
         {
             var message = MessageCreator.CreateMessage<T>();
             action(message);
