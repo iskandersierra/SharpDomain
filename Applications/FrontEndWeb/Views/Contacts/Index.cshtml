@@ -1,4 +1,5 @@
-﻿@{
+﻿@using ContactsContext.ReadModel
+@{
     ViewBag.Title = "Contacts list";
 }
 
@@ -7,4 +8,32 @@
     <p class="lead">Search the contact you are looking for.</p>
 </div>
 
-
+<div>
+    @(Html.Kendo().Grid<ContactInfo>().Name("contactGrid")
+        .Columns(c =>
+        {
+            //c.Bound(e => e.ContactId);
+            c.Bound(e => e.Code);
+            c.Bound(e => e.Title);
+            c.Command(commands =>
+            {
+                //commands.Edit();
+                //commands.Destroy();
+            });
+        })
+        .DataSource(datasource => datasource
+            .WebApi()
+            .Model(model =>
+            {
+                model.Id(c => c.ContactId);
+                model.Field(c => c.ContactId).Editable(false);
+                model.Field(c => c.Code).Editable(false);
+                model.Field(c => c.Title);
+            })
+            .Read(read => read.Url(Url.HttpRouteUrl("DefaultApi", new {controller = "ContactsApi"})))
+        )
+        .Sortable()
+        .Filterable()
+        .Pageable()
+    )
+</div>
