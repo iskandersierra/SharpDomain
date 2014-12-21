@@ -94,26 +94,6 @@ namespace SharpDomain.Specs.Business.Steps
         }
         #endregion
 
-        #region [ Event assertions ]
-
-        [Then(@"the version of event ""(.*)"" is (.*)")]
-        public void ThenTheVersionOfEventIs(string @eventName, int version)
-        {
-            var @event = ScenarioContext.Current.Get<IEvent>(@eventName);
-
-            Assert.That(@event.Version, Is.EqualTo(version));
-        }
-
-        [Then(@"the source id of event ""(.*)"" is ""(.*)""")]
-        public void ThenTheSourceIdOfEventIs(string @eventName, Guid sourceId)
-        {
-            var @event = ScenarioContext.Current.Get<IEvent>(@eventName);
-
-            Assert.That(@event.SourceId, Is.EqualTo(sourceId));
-        }
-
-        #endregion
-
         #region [ Aggregate assertions ]
 
         [Then(@"the aggregate is not null")]
@@ -140,22 +120,6 @@ namespace SharpDomain.Specs.Business.Steps
             Assert.That(aggregate, Is.InstanceOf<StatefulTestAggregate>());
         }
 
-        [Then(@"the aggregate id is an empty Guid")]
-        public void ThenTheAggregateIdIsAnEmptyGuid()
-        {
-            var aggregate = ScenarioContext.Current.Get<IAggregate>();
-
-            Assert.That(aggregate.Id, Is.EqualTo(Guid.Empty));
-        }
-
-        [Then(@"the aggregate id is Guid ""(.*)""")]
-        public void ThenTheAggregateIdIsGuid(Guid aggregateId)
-        {
-            var aggregate = ScenarioContext.Current.Get<IAggregate>();
-
-            Assert.That(aggregate.Id, Is.EqualTo(aggregateId));
-        }
-
         [Then(@"the aggregate has (.*) uncommitted events")]
         public void ThenTheAggregateHasUncommittedEvents(int uncommittedEventsCount)
         {
@@ -171,14 +135,6 @@ namespace SharpDomain.Specs.Business.Steps
             var @event = ScenarioContext.Current.Get<IEvent>(@eventName);
 
             Assert.That(aggregate.UncommittedEvents.ElementAt(eventNumber - 1), Is.SameAs(@event));
-        }
-
-        [Then(@"the aggregate version is (.*)")]
-        public void ThenTheAggregateVersionIs(int version)
-        {
-            var aggregate = ScenarioContext.Current.Get<IAggregate>();
-
-            Assert.That(aggregate.Version, Is.EqualTo(version));
         }
 
         [Then(@"the aggregate has no uncommitted events")]
@@ -228,7 +184,7 @@ namespace SharpDomain.Specs.Business.Steps
         }
     }
 
-    internal interface TestAggregateCreated : IAggregateCreatedEvent
+    internal interface TestAggregateCreated : IEvent
     {
 
     }

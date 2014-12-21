@@ -53,12 +53,12 @@ namespace ContactsContext.EventSourcing.Specs
             ScenarioContext.Current.Set(command);
         }
         [Given(@"a update contact picture command is created with ""(.*)"" and ""(.*)""")]
-        public void GivenAUpdateContactPictureCommandIsCreatedWithAnd(Guid contactId, Guid pictureId)
+        public void GivenAUpdateContactPictureCommandIsCreatedWithAnd(Guid contactId, string picturePath)
         {
             var command = MessageCreator.CreateMessage<UpdateContactPicture>(c =>
             {
                 c.ContactId = contactId;
-                c.PictureId = pictureId;
+                c.PicturePath = picturePath;
             });
             ScenarioContext.Current.Set(command);
         }
@@ -128,7 +128,6 @@ namespace ContactsContext.EventSourcing.Specs
 
             var @event = context.EmmittedEvents[pos - 1] as ContactCreated;
             Assert.That(@event, Is.Not.Null);
-            Assert.That(@event.SourceId, Is.EqualTo(commandId));
         }
 
         [Then(@"the command processor context has a contact title updated event as event (.*) with ""(.*)"" and ""(.*)""")]
@@ -138,18 +137,16 @@ namespace ContactsContext.EventSourcing.Specs
 
             var @event = context.EmmittedEvents[pos - 1] as ContactTitleUpdated;
             Assert.That(@event, Is.Not.Null);
-            Assert.That(@event.SourceId, Is.EqualTo(commandId));
             Assert.That(@event.Title, Is.EqualTo(title));
         }
         [Then(@"the command processor context has a contact picture updated event as event (.*) with ""(.*)"" and ""(.*)""")]
-        public void ThenTheCommandprocessorContextHasAContactPictureUpdatedEventAsEventWithAnd(int pos, Guid commandId, Guid pictureId)
+        public void ThenTheCommandprocessorContextHasAContactPictureUpdatedEventAsEventWithAnd(int pos, Guid commandId, string pictureId)
         {
             var context = (CommandProcessorContextMock)ScenarioContext.Current.Get<ICommandProcessorContext>();
 
             var @event = context.EmmittedEvents[pos - 1] as ContactPictureUpdated;
             Assert.That(@event, Is.Not.Null);
-            Assert.That(@event.SourceId, Is.EqualTo(commandId));
-            Assert.That(@event.PictureId, Is.EqualTo(pictureId));
+            Assert.That(@event.PicturePath, Is.EqualTo(pictureId));
         }
         [Then(@"the command processor context has a contact picture cleared event as event (.*) with ""(.*)""")]
         public void ThenTheCommandprocessorContextHasAContactPictureClearedEventAsEventWith(int pos, Guid commandId)
@@ -158,7 +155,6 @@ namespace ContactsContext.EventSourcing.Specs
 
             var @event = context.EmmittedEvents[pos - 1] as ContactPictureCleared;
             Assert.That(@event, Is.Not.Null);
-            Assert.That(@event.SourceId, Is.EqualTo(commandId));
         }
         #endregion [ Then ]
     }

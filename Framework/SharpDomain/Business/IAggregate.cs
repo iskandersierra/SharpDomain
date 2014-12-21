@@ -12,10 +12,6 @@ namespace SharpDomain.Business
     /// </summary>
     public interface IAggregate
     {
-        Guid Id { get; }
-
-        int Version { get; }
-
         void ApplyEvent(IEvent @event);
 
         IEnumerable<IEvent> UncommittedEvents { get; }

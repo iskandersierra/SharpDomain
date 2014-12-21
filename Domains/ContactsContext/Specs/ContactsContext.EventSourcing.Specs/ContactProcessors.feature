@@ -32,13 +32,13 @@ Scenario Outline: A update contact title command raises a contact title updated 
 Scenario Outline: A update contact picture command raises a contact picture updated event
 	Given a contact command processor
 	And a command processor context
-	And a update contact picture command is created with "<contactId>" and "<pictureId>"
+	And a update contact picture command is created with "<contactId>" and "<picturePath>"
 	When the update contact picture command processor processes the command
 	Then the command processor context has <eventCount> emmitted events
-	And the command processor context has a contact picture updated event as event 1 with "<contactId>" and "<pictureId>"
+	And the command processor context has a contact picture updated event as event 1 with "<contactId>" and "<picturePath>"
 	Examples:
-	| contactId                              | pictureId                              | eventCount |
-	| {6010B03D-B110-42CA-87B1-0C6B926C6E4E} | {1811C884-0030-4F06-8FC0-2E6DCD28FD77} | 1          |
+	| contactId                              | picturePath                     | eventCount |
+	| {6010B03D-B110-42CA-87B1-0C6B926C6E4E} | http://pics.example.com/pic.png | 1          |
 
 Scenario Outline: A clear contact picture command raises a contact picture cleared event
 	Given a contact command processor

@@ -85,10 +85,6 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And("the aggregate type is Aggregate class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("the aggregate id is an empty Guid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("the aggregate version is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
  testRunner.And("the aggregate has no uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

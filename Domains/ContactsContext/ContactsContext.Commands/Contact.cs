@@ -19,7 +19,7 @@ namespace ContactsContext.Commands
     }
     public interface UpdateContactPicture : ContactCommand
     {
-        Guid PictureId { get; set; }
+        string PicturePath { get; set; }
     }
     public interface ClearContactPicture : ContactCommand
     {

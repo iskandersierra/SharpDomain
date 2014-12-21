@@ -12,41 +12,23 @@ namespace ContactsContext.EventSourcing
     {
         public void Process(CreateContact command, ICommandProcessorContext context)
         {
-            context.Emmit<ContactCreated>(e =>
-            {
-                e.SourceId = command.ContactId;
-            });
-            context.Emmit<ContactTitleUpdated>(e =>
-            {
-                e.SourceId = command.ContactId;
-                e.Title = command.Title;
-            });
+            context.Emmit<ContactCreated>();
+            context.Emmit<ContactTitleUpdated>(e => { e.Title = command.Title; });
         }
 
         public void Process(UpdateContactTitle command, ICommandProcessorContext context)
         {
-            context.Emmit<ContactTitleUpdated>(e =>
-            {
-                e.SourceId = command.ContactId;
-                e.Title = command.Title;
-            });
+            context.Emmit<ContactTitleUpdated>(e => { e.Title = command.Title; });
         }
 
         public void Process(UpdateContactPicture command, ICommandProcessorContext context)
         {
-            context.Emmit<ContactPictureUpdated>(e =>
-            {
-                e.SourceId = command.ContactId;
-                e.PictureId = command.PictureId;
-            });
+            context.Emmit<ContactPictureUpdated>(e => { e.PicturePath = command.PicturePath; });
         }
 
         public void Process(ClearContactPicture command, ICommandProcessorContext context)
         {
-            context.Emmit<ContactPictureCleared>(e =>
-            {
-                e.SourceId = command.ContactId;
-            });
+            context.Emmit<ContactPictureCleared>();
         }
     }
 }

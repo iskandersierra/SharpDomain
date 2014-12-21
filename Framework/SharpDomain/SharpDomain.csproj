@@ -72,11 +72,9 @@
     <Compile Include="DDD\IBoundedContext.cs" />
     <Compile Include="EventSourcing\DefaultMessageCreator.cs" />
     <Compile Include="EventSourcing\ExtensionsToMessageCreator.cs" />
-    <Compile Include="EventSourcing\ICommandHandlerContext.cs" />
     <Compile Include="EventSourcing\ICommandProcessor.cs" />
     <Compile Include="EventSourcing\ICommandProcessorContext.cs" />
     <Compile Include="EventSourcing\ICreateAggregateCommand.cs" />
-    <Compile Include="EventSourcing\IAggregateCreatedEvent.cs" />
     <Compile Include="EventSourcing\IEvent.cs" />
     <Compile Include="EventSourcing\ICommand.cs" />
     <Compile Include="EventSourcing\IMessageCreator.cs" />

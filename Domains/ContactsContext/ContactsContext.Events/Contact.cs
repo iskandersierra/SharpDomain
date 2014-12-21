@@ -3,7 +3,7 @@ using SharpDomain.EventSourcing;
 
 namespace ContactsContext.Events
 {
-    public interface ContactCreated : IAggregateCreatedEvent
+    public interface ContactCreated : IEvent
     {
     }
     public interface ContactTitleUpdated : IEvent
@@ -12,7 +12,7 @@ namespace ContactsContext.Events
     }
     public interface ContactPictureUpdated : IEvent
     {
-        Guid PictureId { get; set; }
+        string PicturePath { get; set; }
     }
     public interface ContactPictureCleared : IEvent
     {

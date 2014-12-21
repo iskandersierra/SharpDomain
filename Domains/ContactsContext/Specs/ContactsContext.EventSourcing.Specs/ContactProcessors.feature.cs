@@ -129,8 +129,8 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A update contact picture command raises a contact picture updated event")]
-        [NUnit.Framework.TestCaseAttribute("{6010B03D-B110-42CA-87B1-0C6B926C6E4E}", "{1811C884-0030-4F06-8FC0-2E6DCD28FD77}", "1", null)]
-        public virtual void AUpdateContactPictureCommandRaisesAContactPictureUpdatedEvent(string contactId, string pictureId, string eventCount, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("{6010B03D-B110-42CA-87B1-0C6B926C6E4E}", "http://pics.example.com/pic.png", "1", null)]
+        public virtual void AUpdateContactPictureCommandRaisesAContactPictureUpdatedEvent(string contactId, string picturePath, string eventCount, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A update contact picture command raises a contact picture updated event", exampleTags);
 #line 32
@@ -140,14 +140,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 34
  testRunner.And("a command processor context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And(string.Format("a update contact picture command is created with \"{0}\" and \"{1}\"", contactId, pictureId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("a update contact picture command is created with \"{0}\" and \"{1}\"", contactId, picturePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
  testRunner.When("the update contact picture command processor processes the command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
  testRunner.Then(string.Format("the command processor context has {0} emmitted events", eventCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
  testRunner.And(string.Format("the command processor context has a contact picture updated event as event 1 with" +
-                        " \"{0}\" and \"{1}\"", contactId, pictureId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        " \"{0}\" and \"{1}\"", contactId, picturePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -86,18 +86,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
- testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
  testRunner.And("the aggregate type is Aggregate class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.And("the aggregate version is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 12
  testRunner.And("the aggregate has 1 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
+#line 13
  testRunner.And("the aggregate uncommitted event number 1 is \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -108,60 +100,16 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AnAggregateMustRaiseAnExceptionWhenANullEventIsApplied()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An aggregate must raise an exception when a null event is applied", ((string[])(null)));
-#line 19
+#line 15
 this.ScenarioSetup(scenarioInfo);
-#line 20
+#line 16
  testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
+#line 17
  testRunner.And("a new aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 18
  testRunner.When("a null is applied to the aggregate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 19
  testRunner.Then("an argument null exception is raised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("An aggregate must raise an exception when a creation event is applied with empty " +
-            "id")]
-        public virtual void AnAggregateMustRaiseAnExceptionWhenACreationEventIsAppliedWithEmptyId()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An aggregate must raise an exception when a creation event is applied with empty " +
-                    "id", ((string[])(null)));
-#line 25
-this.ScenarioSetup(scenarioInfo);
-#line 26
- testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
- testRunner.And("a new aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.When("a new event \"e1\" of type TestAggregateCreated is applied to the aggregate with id" +
-                    " \"{00000000-0000-0000-0000-000000000000}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.Then("an argument out of range exception is raised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("An aggregate must raise an exception when a non-creation event is applied as firs" +
-            "t event")]
-        public virtual void AnAggregateMustRaiseAnExceptionWhenANon_CreationEventIsAppliedAsFirstEvent()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An aggregate must raise an exception when a non-creation event is applied as firs" +
-                    "t event", ((string[])(null)));
-#line 31
-this.ScenarioSetup(scenarioInfo);
-#line 32
- testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
- testRunner.And("a new aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.When("a new event \"e1\" of type TestAggregateModified is applied to the aggregate with v" +
-                    "alue \"hello there\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
- testRunner.Then("an argument out of range exception is raised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -171,39 +119,27 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ANewAggregateHasACreateAndModifyEventsApplied()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A new aggregate has a create and modify events applied", ((string[])(null)));
-#line 37
+#line 33
 this.ScenarioSetup(scenarioInfo);
-#line 38
+#line 34
  testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
+#line 35
  testRunner.And("a new aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 36
  testRunner.When("a new event \"e1\" of type TestAggregateCreated is applied to the aggregate with id" +
                     " \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 37
  testRunner.And("a new event \"e2\" of type TestAggregateModified is applied to the aggregate with v" +
                     "alue \"hello there\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 38
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
- testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.And("the version of event \"e2\" is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
- testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
- testRunner.And("the source id of event \"e2\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 39
  testRunner.And("the aggregate type is Aggregate class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
- testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
- testRunner.And("the aggregate version is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 40
  testRunner.And("the aggregate has 2 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 41
  testRunner.And("the aggregate uncommitted event number 1 is \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 42
  testRunner.And("the aggregate uncommitted event number 2 is \"e2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -216,64 +152,44 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A new stateful aggregate has a create, modify and other events applied events app" +
                     "lied", ((string[])(null)));
-#line 54
+#line 44
 this.ScenarioSetup(scenarioInfo);
-#line 55
+#line 45
  testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 56
+#line 46
  testRunner.And("a new stateful aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 47
  testRunner.When("a new event \"e1\" of type TestAggregateCreated is applied to the aggregate with id" +
                     " \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 48
  testRunner.And("a new event \"e2\" of type TestAggregateModified is applied to the aggregate with v" +
                     "alue \"hello there\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 49
  testRunner.And("a new event \"e3\" of type TestAggregateModified version two is applied to the aggr" +
                     "egate with value \"hello back\" and int value 24", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 50
  testRunner.And("a new event \"e4\" of type TestAggregateOther is applied to the aggregate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 51
  testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
- testRunner.And("the version of event \"e1\" is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And("the version of event \"e2\" is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("the version of event \"e3\" is 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And("the version of event \"e4\" is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("the source id of event \"e1\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("the source id of event \"e2\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("the source id of event \"e3\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("the source id of event \"e4\" is \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 52
  testRunner.And("the aggregate type is StatefulTestAggregate class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("the aggregate id is Guid \"{77932DE5-D381-49D9-9CDA-1015C17E0769}\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And("the aggregate version is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 53
  testRunner.And("the aggregate has 4 uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 54
  testRunner.And("the aggregate uncommitted event number 1 is \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 55
  testRunner.And("the aggregate uncommitted event number 2 is \"e2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 56
  testRunner.And("the aggregate uncommitted event number 3 is \"e3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 57
  testRunner.And("the aggregate uncommitted event number 4 is \"e4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 58
  testRunner.And("the aggregate has 3 explicitly applied events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 59
  testRunner.And("the aggregate applied event number 1 is \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 60
  testRunner.And("the aggregate applied event number 2 is \"e2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 61
  testRunner.And("the aggregate applied event number 3 is \"e3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

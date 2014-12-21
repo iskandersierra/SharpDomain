@@ -19,7 +19,7 @@ namespace ContactsContext.Commands.Validation
     {
         public UpdateContactPictureValidator()
         {
-            RuleFor(e => e.PictureId).NotEmpty();
+            RuleFor(e => e.PicturePath).NotEmpty();
         }
     }
 
