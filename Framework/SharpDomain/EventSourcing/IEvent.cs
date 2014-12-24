@@ -2,7 +2,7 @@
 
 namespace SharpDomain.EventSourcing
 {
-    public interface IEvent
+    public interface IEvent : IMessage
     {
 
     }

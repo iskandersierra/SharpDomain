@@ -35,11 +35,15 @@
     <Reference Include="Magnum">
       <HintPath>..\..\packages\Magnum.2.1.3\lib\NET40\Magnum.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -70,14 +74,27 @@
     <Compile Include="Business\StatefulAggregate.cs" />
     <Compile Include="DDD\BoundedContext.cs" />
     <Compile Include="DDD\IBoundedContext.cs" />
+    <Compile Include="EventSourcing\ContextGetAttribute.cs" />
+    <Compile Include="EventSourcing\ContextSetAttribute.cs" />
     <Compile Include="EventSourcing\DefaultMessageCreator.cs" />
     <Compile Include="EventSourcing\ExtensionsToMessageCreator.cs" />
+    <Compile Include="EventSourcing\ResourceIdProcessingStep.cs" />
     <Compile Include="EventSourcing\ICommandProcessor.cs" />
     <Compile Include="EventSourcing\ICommandProcessorContext.cs" />
     <Compile Include="EventSourcing\ICreateAggregateCommand.cs" />
     <Compile Include="EventSourcing\IEvent.cs" />
     <Compile Include="EventSourcing\ICommand.cs" />
+    <Compile Include="EventSourcing\IEventProcessor.cs" />
+    <Compile Include="EventSourcing\IEventProcessorContext.cs" />
+    <Compile Include="EventSourcing\IMessage.cs" />
     <Compile Include="EventSourcing\IMessageCreator.cs" />
+    <Compile Include="EventSourcing\IMessageProcessor.cs" />
+    <Compile Include="EventSourcing\IMessageProcessorContext.cs" />
+    <Compile Include="EventSourcing\IProcessorContext.cs" />
+    <Compile Include="EventSourcing\MessageProcessingStep.cs" />
+    <Compile Include="EventSourcing\ProcessingStepState.cs" />
+    <Compile Include="EventSourcing\ProcessorContext.cs" />
+    <Compile Include="EventSourcing\ProcessorContextKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +105,7 @@
     <Compile Include="Querying\IPagedCollection.cs" />
     <Compile Include="Querying\PagedCollection.cs" />
     <Compile Include="AccessControl\IAccessControlService.cs" />
+    <Compile Include="ReadModel\AuditableDao.cs" />
     <Compile Include="Reflection\DaoInterfaceCreator.cs" />
   </ItemGroup>
   <ItemGroup>

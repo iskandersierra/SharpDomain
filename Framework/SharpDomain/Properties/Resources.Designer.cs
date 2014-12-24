@@ -124,6 +124,24 @@ namespace SharpDomain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Key {0} already set for type {1}.
+        /// </summary>
+        public static string KeyAlreadySetForGivenType {
+            get {
+                return ResourceManager.GetString("KeyAlreadySetForGivenType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key {0} not found for type {1}.
+        /// </summary>
+        public static string KeyNotFoundForGivenType {
+            get {
+                return ResourceManager.GetString("KeyNotFoundForGivenType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Token {0} for type {1} is already set.
         /// </summary>
         public static string TokenIsAlreadySet {
@@ -138,6 +156,15 @@ namespace SharpDomain.Properties {
         public static string TooManyEndpointsForCommand {
             get {
                 return ResourceManager.GetString("TooManyEndpointsForCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expected state was {0} but found {1}.
+        /// </summary>
+        public static string UnexpectedProcessingStepState {
+            get {
+                return ResourceManager.GetString("UnexpectedProcessingStepState", resourceCulture);
             }
         }
     }

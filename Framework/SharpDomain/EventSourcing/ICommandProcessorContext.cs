@@ -2,7 +2,7 @@
 
 namespace SharpDomain.EventSourcing
 {
-    public interface ICommandProcessorContext
+    public interface ICommandProcessorContext : IMessageProcessorContext
     {
         void Emmit<T>(Action<T> action) 
             where T : class, IEvent;

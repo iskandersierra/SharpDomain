@@ -144,4 +144,13 @@
   <data name="AnErrorIsAlreadyRegistered" xml:space="preserve">
     <value>An error is already registered within this processing context</value>
   </data>
+  <data name="KeyNotFoundForGivenType" xml:space="preserve">
+    <value>Key {0} not found for type {1}</value>
+  </data>
+  <data name="KeyAlreadySetForGivenType" xml:space="preserve">
+    <value>Key {0} already set for type {1}</value>
+  </data>
+  <data name="UnexpectedProcessingStepState" xml:space="preserve">
+    <value>Expected state was {0} but found {1}</value>
+  </data>
 </root>

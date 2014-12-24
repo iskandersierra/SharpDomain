@@ -1,6 +1,6 @@
 ﻿namespace SharpDomain.EventSourcing
 {
-    public interface ICommand
+    public interface ICommand : IMessage
     {
     }
 

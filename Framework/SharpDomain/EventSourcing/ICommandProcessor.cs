@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SharpDomain.EventSourcing
+﻿namespace SharpDomain.EventSourcing
 {
-    public interface ICommandProcessor
+    public interface ICommandProcessor : IMessageProcessor
     {
     }
 
-    public interface ICommandProcessor<TCommand> 
+    public interface ICommandProcessor<in TCommand> 
         where TCommand : class, ICommand
     {
         void Process(TCommand command, ICommandProcessorContext context);
