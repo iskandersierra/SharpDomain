@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.MSMQ", "Extensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.NServiceBus", "Extensions\SharpDomain.NServiceBus\SharpDomain.NServiceBus.csproj", "{8C7BA534-B3BA-46E1-9228-1F2AC6A54DD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Logging.NLog", "Extensions\SharpDomain.Logging.NLog\SharpDomain.Logging.NLog.csproj", "{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{8C7BA534-B3BA-46E1-9228-1F2AC6A54DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C7BA534-B3BA-46E1-9228-1F2AC6A54DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C7BA534-B3BA-46E1-9228-1F2AC6A54DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{F441DF33-8C5D-478F-9183-BA7C4BA9D9F0} = {86FFB953-7E24-4E8A-9CDB-8086BC3BBC24}
 		{8FF27FA7-62F1-4AFD-BE49-7BA5EFFB820A} = {50986936-F5A1-47BC-A94C-A02FBF6EE751}
 		{8C7BA534-B3BA-46E1-9228-1F2AC6A54DD1} = {50986936-F5A1-47BC-A94C-A02FBF6EE751}
+		{034ABFD5-C4D8-4071-AF3B-9DD31D3EBEB4} = {50986936-F5A1-47BC-A94C-A02FBF6EE751}
 	EndGlobalSection
 EndGlobal
