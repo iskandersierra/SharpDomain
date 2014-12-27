@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Magnum.Monads.Parser;
 
 namespace SharpDomain.Reflection
 {
@@ -41,7 +40,10 @@ namespace SharpDomain.Reflection
 
             if (type.IsGenericType || type.IsGenericTypeDefinition)
             {
-                name = type.Name.Substring(0, type.Name.IndexOf('`'));
+                name = type.Name;
+                var indexOfApos = name.IndexOf('`');
+                if (indexOfApos >= 0)
+                    name = name.Substring(0, indexOfApos);
                 sb.Append(name);
                 if (includeGenerics)
                 {

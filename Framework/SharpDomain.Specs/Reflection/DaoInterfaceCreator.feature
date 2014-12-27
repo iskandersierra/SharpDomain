@@ -1,4 +1,4 @@
-﻿@infrastructure
+﻿@framework
 @reflection
 Feature: DaoInterfaceCreator
 

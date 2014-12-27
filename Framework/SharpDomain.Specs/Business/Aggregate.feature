@@ -1,4 +1,4 @@
-﻿@infrastructure
+﻿@framework
 @business
 Feature: Aggregate
 	Aggregate represents a concrete aggregate entity which can be directly used by a domain implementation

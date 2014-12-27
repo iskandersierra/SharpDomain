@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework;
-using SharpDomain.Business;
 using TechTalk.SpecFlow;
 
 namespace SharpDomain.Specs
@@ -8,6 +7,23 @@ namespace SharpDomain.Specs
     [Binding]
     public class CommonSteps
     {
+
+        public static T Get<T>()
+        {
+            return ScenarioContext.Current.Get<T>();
+        }
+        public static T Get<T>(string key)
+        {
+            return ScenarioContext.Current.Get<T>(key);
+        }
+        public static void Set<T>(T value)
+        {
+            ScenarioContext.Current.Set<T>(value);
+        }
+        public static void Set<T>(T value, string key)
+        {
+            ScenarioContext.Current.Set<T>(value, key);
+        }
 
         [Then(@"an argument out of range exception is raised")]
         public void ThenAnArgumentOutOfRangeExceptionIsRaised()

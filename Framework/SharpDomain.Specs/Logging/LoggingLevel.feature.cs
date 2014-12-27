@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SharpDomain.Specs.Business
+namespace SharpDomain.Specs.Logging
 {
     using TechTalk.SpecFlow;
     
@@ -19,25 +19,24 @@ namespace SharpDomain.Specs.Business
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.3.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ReflectionAggregateFactory")]
+    [NUnit.Framework.DescriptionAttribute("LoggingLevel")]
+    [NUnit.Framework.CategoryAttribute("logging")]
     [NUnit.Framework.CategoryAttribute("framework")]
-    [NUnit.Framework.CategoryAttribute("business")]
-    public partial class ReflectionAggregateFactoryFeature
+    public partial class LoggingLevelFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AggregateFactory.feature"
+#line 1 "LoggingLevel.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ReflectionAggregateFactory", "Reflection aggregate factory allow the creation of new clean aggregate instances " +
-                    "with default \r\nvalues on its properties", ProgrammingLanguage.CSharp, new string[] {
-                        "framework",
-                        "business"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LoggingLevel", "Enumerated list of logging levels", ProgrammingLanguage.CSharp, new string[] {
+                        "logging",
+                        "framework"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,22 +69,30 @@ namespace SharpDomain.Specs.Business
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A reflection-based aggregate factory returns a new clean aggregate instance")]
-        public virtual void AReflection_BasedAggregateFactoryReturnsANewCleanAggregateInstance()
+        [NUnit.Framework.DescriptionAttribute("There are exactly seven Logging Levels and they are Trace ... Off")]
+        public virtual void ThereAreExactlySevenLoggingLevelsAndTheyAreTrace_Off()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A reflection-based aggregate factory returns a new clean aggregate instance", ((string[])(null)));
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("There are exactly seven Logging Levels and they are Trace ... Off", ((string[])(null)));
+#line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("The list of all LogginLevel enum values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.Given("a new reflection-based aggregate factory instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Then("The list of all logging levels has 7 values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.When("a new aggregate is obtained from the aggregate factory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("The LoggingLevel at 0 is \"Trace\" and has ordinal value of 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.Then("the aggregate is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("The LoggingLevel at 1 is \"Debug\" and has ordinal value of 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("the aggregate type is Aggregate class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The LoggingLevel at 2 is \"Info\" and has ordinal value of 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("the aggregate has no uncommitted events", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The LoggingLevel at 3 is \"Warn\" and has ordinal value of 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("The LoggingLevel at 4 is \"Error\" and has ordinal value of 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("The LoggingLevel at 5 is \"Fatal\" and has ordinal value of 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("The LoggingLevel at 6 is \"Off\" and has ordinal value of 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

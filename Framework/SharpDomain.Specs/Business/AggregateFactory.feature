@@ -1,4 +1,4 @@
-﻿@infrastructure
+﻿@framework
 @business
 Feature: ReflectionAggregateFactory
 	Reflection aggregate factory allow the creation of new clean aggregate instances with default 

@@ -20,7 +20,7 @@ namespace SharpDomain.Specs.Reflection
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("DaoInterfaceCreator")]
-    [NUnit.Framework.CategoryAttribute("infrastructure")]
+    [NUnit.Framework.CategoryAttribute("framework")]
     [NUnit.Framework.CategoryAttribute("reflection")]
     public partial class DaoInterfaceCreatorFeature
     {
@@ -35,7 +35,7 @@ namespace SharpDomain.Specs.Reflection
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DaoInterfaceCreator", "", ProgrammingLanguage.CSharp, new string[] {
-                        "infrastructure",
+                        "framework",
                         "reflection"});
             testRunner.OnFeatureStart(featureInfo);
         }

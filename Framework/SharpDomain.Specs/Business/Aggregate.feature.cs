@@ -20,7 +20,7 @@ namespace SharpDomain.Specs.Business
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Aggregate")]
-    [NUnit.Framework.CategoryAttribute("infrastructure")]
+    [NUnit.Framework.CategoryAttribute("framework")]
     [NUnit.Framework.CategoryAttribute("business")]
     public partial class AggregateFeature
     {
@@ -36,7 +36,7 @@ namespace SharpDomain.Specs.Business
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Aggregate", "Aggregate represents a concrete aggregate entity which can be directly used by a " +
                     "domain implementation", ProgrammingLanguage.CSharp, new string[] {
-                        "infrastructure",
+                        "framework",
                         "business"});
             testRunner.OnFeatureStart(featureInfo);
         }

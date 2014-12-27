@@ -10,9 +10,17 @@ namespace SharpDomain.Logging
 {
     public static class ExtensionsToLogFactory
     {
+        public const string DefaultLogName = "default";
+
         public static ILog GetCurrentClassLog(this ILogFactory factory)
         {
-            var frame = new StackFrame(1, false);
+            var log = factory.GetCurrentClassLog(1);
+            return log;
+        }
+
+        internal static ILog GetCurrentClassLog(this ILogFactory factory, int stackFrameDepth)
+        {
+            var frame = new StackFrame(stackFrameDepth, false);
             var type = frame.GetMethod().DeclaringType;
             var log = factory.GetLog(type);
             return log;
@@ -20,7 +28,7 @@ namespace SharpDomain.Logging
 
         public static ILog GetDefaultLog(this ILogFactory factory)
         {
-            var log = factory.GetLog("default");
+            var log = factory.GetLog(DefaultLogName);
             return log;
         }
 
