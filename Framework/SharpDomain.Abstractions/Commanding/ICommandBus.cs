@@ -1,4 +1,6 @@
-﻿namespace SharpDomain.Commanding
+﻿using System;
+
+namespace SharpDomain.Commanding
 {
     /// <summary>
     /// Service to send command to a target server or distributor
@@ -10,5 +12,8 @@
         /// </summary>
         /// <param name="command"></param>
         void Send(IDomainCommand command);
+        
+        void Send<TCommand>(Action<TCommand> initCommand)
+            where TCommand : class, IDomainCommand;
     }
 }

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ContactsDomain.Messaging.Events")]
+[assembly: AssemblyTitle("ContactsDomain.Commands")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ContactsDomain.Messaging.Events")]
+[assembly: AssemblyProduct("ContactsDomain.Commands")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e319065c-3ae5-4f27-951d-f4bf9f3c2bfa")]
+[assembly: Guid("1d6fc7ce-4086-4c4a-b2d9-35edb8272c39")]
 
 // Version information for an assembly consists of the following four values:
 //

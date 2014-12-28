@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ContactsDomain.WriteModel")]
+[assembly: AssemblyTitle("SharpDomain.Autofac")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ContactsDomain.WriteModel")]
+[assembly: AssemblyProduct("SharpDomain.Autofac")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3b9c76cc-debf-402c-9b9f-44c0beb9cf4e")]
+[assembly: Guid("a2959f4d-f60c-471f-828c-d1eca775c914")]
 
 // Version information for an assembly consists of the following four values:
 //
