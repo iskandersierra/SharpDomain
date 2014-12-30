@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\packages\Common.Logging.2.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\packages\NServiceBus.5.1.2\lib\net45\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -44,9 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commanding\NSBAccessCommandHeaders.cs" />
+    <Compile Include="Commanding\NSBCommandBus.cs" />
+    <Compile Include="DomainCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\SharpDomain.Abstractions\SharpDomain.Abstractions.csproj">
+      <Project>{04B9A90D-6563-49FF-9CED-B8B0CA941D1D}</Project>
+      <Name>SharpDomain.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\SharpDomain\SharpDomain.csproj">
       <Project>{7adec00d-cf0c-4aaa-8f78-da35ab71c07f}</Project>
       <Name>SharpDomain</Name>

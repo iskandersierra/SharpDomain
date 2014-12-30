@@ -47,9 +47,9 @@
       <Project>{04B9A90D-6563-49FF-9CED-B8B0CA941D1D}</Project>
       <Name>SharpDomain.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Framework\SharpDomain.Client\SharpDomain.Client.csproj">
-      <Project>{795F9A55-6E74-4265-A967-257E88D1DB06}</Project>
-      <Name>SharpDomain.Client</Name>
+    <ProjectReference Include="..\..\..\..\Framework\SharpDomain.Core\SharpDomain.Core.csproj">
+      <Project>{DC0CA3A8-DEBE-461C-B5E9-01863A0B59AD}</Project>
+      <Name>SharpDomain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\ContactsDomain.Commands\ContactsDomain.Commands.csproj">
       <Project>{F03FA8C0-0761-469D-9643-16BBF74B39A8}</Project>

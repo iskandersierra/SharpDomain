@@ -54,6 +54,7 @@
       <HintPath>..\..\packages\NServiceBus.Autofac.5.0.0\lib\net45\NServiceBus.ObjectBuilder.Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,21 +84,21 @@
       <Project>{c262f3c1-05bd-4bcd-9844-e4de8e19f586}</Project>
       <Name>SharpDomain.Client.Autofac</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\SharpDomain.NServiceBus.Autofac\SharpDomain.NServiceBus.Autofac.csproj">
+      <Project>{0f36caca-7188-41c8-8b0a-c89d929b5235}</Project>
+      <Name>SharpDomain.NServiceBus.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\SharpDomain.NServiceBus\SharpDomain.NServiceBus.csproj">
+      <Project>{8c7ba534-b3ba-46e1-9228-1f2ac6a54dd1}</Project>
+      <Name>SharpDomain.NServiceBus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\SharpDomain.Abstractions\SharpDomain.Abstractions.csproj">
       <Project>{04b9a90d-6563-49ff-9ced-b8b0ca941d1d}</Project>
       <Name>SharpDomain.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\SharpDomain.Client\SharpDomain.Client.csproj">
-      <Project>{795f9a55-6e74-4265-a967-257e88d1db06}</Project>
-      <Name>SharpDomain.Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Framework\SharpDomain.Core\SharpDomain.Core.csproj">
       <Project>{dc0ca3a8-debe-461c-b5e9-01863a0b59ad}</Project>
       <Name>SharpDomain.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Framework\SharpDomain.Utilities\SharpDomain.Utilities.csproj">
-      <Project>{8b56eded-3579-4068-af92-b9aa43ec8027}</Project>
-      <Name>SharpDomain.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domains\ContactsDomain\ContactsDomain.Client\ContactsDomain.Client.csproj">
       <Project>{dcfa01a0-f069-42a4-8ff7-22b4c3922336}</Project>

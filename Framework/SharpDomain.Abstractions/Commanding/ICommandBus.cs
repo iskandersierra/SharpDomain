@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SharpDomain.Commanding
 {
@@ -11,9 +12,10 @@ namespace SharpDomain.Commanding
         /// Sends the command to a target server or distributor
         /// </summary>
         /// <param name="command"></param>
-        void Send(IDomainCommand command);
-        
-        void Send<TCommand>(Action<TCommand> initCommand)
+        /// <param name="configHeaders"></param>
+        ISendCommandCallback Send(IDomainCommand command, Action<IDictionary<string, string>> configHeaders = null);
+
+        ISendCommandCallback Send<TCommand>(Action<TCommand> initCommand, Action<IDictionary<string, string>> configHeaders = null)
             where TCommand : class, IDomainCommand;
     }
 }

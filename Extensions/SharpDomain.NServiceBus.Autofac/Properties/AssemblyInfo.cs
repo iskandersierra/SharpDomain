@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SharpDomain.Utilities")]
+[assembly: AssemblyTitle("SharpDomain.NServiceBus.Autofac")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SharpDomain.Utilities")]
+[assembly: AssemblyProduct("SharpDomain.NServiceBus.Autofac")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("821b1cbd-0c05-414a-8b9c-04728151204b")]
+[assembly: Guid("15e5b080-4285-4595-a677-4768ba046c43")]
 
 // Version information for an assembly consists of the following four values:
 //

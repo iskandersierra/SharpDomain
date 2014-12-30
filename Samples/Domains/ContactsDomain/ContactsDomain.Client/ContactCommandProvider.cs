@@ -12,19 +12,19 @@ namespace ContactsDomain.Client
     {
         private static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
-        //public ContactCommandProvider(ICommandBus bus)
-        //{
-        //    Bus = bus;
-        //}
+        public ContactCommandProvider(ICommandBus bus)
+        {
+            Bus = bus;
+        }
 
-        //public ICommandBus Bus { get; set; }
+        public ICommandBus Bus { get; set; }
 
         [DisplayName("Creates a contact")]
         [Description("Creates a new contact with given title")]
         public void Create([Description("contact title")]string title)
         {
             Log.TraceFormat(string.Format("Create contact '{0}'", title));
-            //Bus.Send<CreateContact>(c => { c.Title = title; });
+            Bus.Send<CreateContact>(c => { c.Title = title; });
         }
 
         [Description("Updates contact title")]

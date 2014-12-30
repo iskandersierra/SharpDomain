@@ -62,6 +62,10 @@ namespace SharpDomain.Client
                     PrintHelp(values);
                     continue;
                 }
+                if (Comparer.Equals(commandName, "exit"))
+                {
+                    break;
+                }
 
                 var commands = FindCommands(commandName, values);
                 ICommandInfo command;

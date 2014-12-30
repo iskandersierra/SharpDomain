@@ -36,7 +36,9 @@
       <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,9 +48,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\SharpDomain.Client\SharpDomain.Client.csproj">
-      <Project>{795F9A55-6E74-4265-A967-257E88D1DB06}</Project>
-      <Name>SharpDomain.Client</Name>
+    <ProjectReference Include="..\..\Framework\SharpDomain.Abstractions\SharpDomain.Abstractions.csproj">
+      <Project>{04B9A90D-6563-49FF-9CED-B8B0CA941D1D}</Project>
+      <Name>SharpDomain.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\SharpDomain.Core\SharpDomain.Core.csproj">
+      <Project>{DC0CA3A8-DEBE-461C-B5E9-01863A0B59AD}</Project>
+      <Name>SharpDomain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\SharpDomain.Autofac\SharpDomain.Autofac.csproj">
       <Project>{96d5937c-e80a-4a7a-81fb-e4413c676b39}</Project>

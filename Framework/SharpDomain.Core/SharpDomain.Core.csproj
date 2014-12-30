@@ -36,23 +36,33 @@
       <HintPath>..\..\packages\Common.Logging.2.3.1\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ClientCommandProvider.cs" />
+    <Compile Include="Client\CommandSendingLoop.cs" />
+    <Compile Include="Client\ICommandInfo.cs" />
+    <Compile Include="Client\ICommandItemInfo.cs" />
+    <Compile Include="Client\ICommandParameterInfo.cs" />
+    <Compile Include="Client\ICommandSendingProvider.cs" />
+    <Compile Include="Client\RunCommandResult.cs" />
+    <Compile Include="Commanding\ClientCommandBus.cs" />
+    <Compile Include="Commanding\CommandBusDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\SharpHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpDomain.Abstractions\SharpDomain.Abstractions.csproj">
       <Project>{04b9a90d-6563-49ff-9ced-b8b0ca941d1d}</Project>
       <Name>SharpDomain.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharpDomain.Utilities\SharpDomain.Utilities.csproj">
-      <Project>{8b56eded-3579-4068-af92-b9aa43ec8027}</Project>
-      <Name>SharpDomain.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
